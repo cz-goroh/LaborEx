@@ -1,0 +1,7 @@
+{%extends 'Manage/admin/cab_wrapper.html'%}
+
+{%block content%}
+    {%for order in object_list%}
+    <br />{{order.id}} <a href="{%url 'Order:new_offer_form' order.id %}">{{order.name}}</a>
+    {%endfor%}
+{%endblock%}

@@ -1,0 +1,290 @@
+{%extends 'Manage/admin/cab_wrapper.html'%}
+
+{%block content%}
+{%csrf_token%}
+<!-- <a href="{%url 'Manage:user_chat' 0%}">Чат</a>
+<a href="{%url 'Order:order_list'%}">Заказы</a>
+<a href="{% url 'Order:new_order'%}">Добавить заказ</a>
+<a href="{% url 'Order:offers'%}">Предложения</a>
+<h3>Реферальная программа</h3>
+
+<div>
+
+    </div>
+<!-- <input id='new_reflink_input'  />
+<button type="button" id="new_reflink_button">Создать</button>
+
+<div id='ref_links'>
+{%for link in ref_links%}
+    <div>http://proofex.ru/reflink/{{link.code}}/</div>
+{%endfor%}
+</div> -->
+<section class="main">
+
+    <nav class="main-menu">
+        <div class="main-menu__wrapper">
+            <div class="container">
+                <div class="main-menu__inner">
+                    <ul class="main-menu__list">
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Дизайн
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Разработка и IT
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Тексты и переводы
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                SEO и трафик
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Соцсети и реклама
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Аудио, видео, съемка
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a class="main-menu__item-link" href="#">
+                                Бизнес и жизнь
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-customer">
+        <div class="profile-customer__wrapper">
+            <div class="container">
+                <div class="profile-customer__inner">
+                    <aside class="filters-profile">
+                        <div class="filters-profile__wrapper">
+                            <a class="filters-profile__btn" href="#">
+                                <div class="filters-profile__btn-text">
+                                    Фильтры
+                                </div>
+                            </a>
+                            <div class="filters-profile__box">
+                                <div class="filters-profile__title">
+                                    Новые задания
+                                </div>
+                                <ul class="filters-profile__list">
+                                    <li class="filters-profile__item">
+                                        <a class="filters-profile__item-link" href="#">
+                                            Консультация по таргету в инстаграме
+                                        </a>
+                                    </li>
+                                    <li class="filters-profile__item">
+                                        <a class="filters-profile__item-link" href="#">
+                                            Консультация по таргету в инстаграме
+                                        </a>
+                                    </li>
+                                    <li class="filters-profile__item">
+                                        <a class="filters-profile__item-link" href="#">
+                                            Консультация по таргету в инстаграме
+                                        </a>
+                                    </li>
+                                    <li class="filters-profile__item">
+                                        <a class="filters-profile__item-link" href="#">
+                                            Консультация по таргету в инстаграме
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a class="filters-profile__performer btn-green" href="#">
+                                Найти исполнителя
+                            </a>
+                        </div>
+                    </aside>
+                    <div class="performer">
+                        <div class="performer__wrapper">
+                            <div class="performer__container">
+                                <div class="performer__left">
+                                    <div class="performer__img">
+                                        <img src="images/profile-performer/profile-user.png" alt="">
+                                    </div>
+                                    <div class="performer__referal referal">
+                                        <div class="referal__quantity">
+                                            <div class="referal__quantity-text">
+                                                Кол-во рефералов:
+                                            </div>
+                                            <a class="referal__quantity-value" href="#">
+                                                46 чел.
+                                            </a>
+                                        </div>
+                                        <div class="referal__percent">
+                                            <div class="referal__percent-text">
+                                                % с реф. ссылки:
+                                            </div>
+                                            <a class="referal__percent-value" href="#">
+                                                12 200 р.
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="performer__right">
+                                    <div class="performer__wrap performer-wrap">
+                                        <div class="performer-wrap__name">
+                                            <div class="performer-wrap__img">
+                                                <img src="images/profile-performer/profile-user-mini.png" alt="">
+                                            </div>
+                                            <div class="performer__name name">
+                                                <a class="name__title" href="#">
+                                                    Лиля Переводова
+                                                </a>
+                                                <div class="name__place">
+                                                    Москва, Россия
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="performer__edit btn-white" href="#">
+                                            Редактировать
+                                        </a>
+                                    </div>
+                                    <div class="performer__rating rating">
+                                        <div class="rating__title">
+                                            Рейтинг
+                                        </div>
+                                        <div class="rating__wrap">
+                                            <div class="rating__time rating__btn btn-white">
+                                                <div class="rating__time-value rating__btn-value">
+                                                    1 г. 6 мес.
+                                                </div>
+                                            </div>
+                                            <a class="rating__tasks rating__btn btn-white" href="#">
+                                                <div class="rating__tasks-value rating__btn-value">
+                                                    32 задания
+                                                </div>
+                                            </a>
+                                            <a class="rating__price rating__btn btn-white" href="#">
+                                                <div class="rating__price-value rating__btn-value">
+                                                    47 700 р.
+                                                </div>
+                                            </a>
+                                            <a class="rating__reviews btn-green" href="#">
+                                                <span>Показать</span> отзывы
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="performer__tasks tasks">
+                                <div class="tasks__wrapper">
+                                    <div class="tasks__title">
+                                        Активные задания
+                                    </div>
+                                    <div class="tasks__wrap">
+                                        <ul class="tasks__items">
+
+                                            <li class="tasks__item tasks-item work">
+                                                <div class="tasks-item__title">
+                                                    Сделать подарочный сертификат
+                                                </div>
+                                                <div class="tasks-item__text">
+                                                    Сделать подарочный сертификат для студии макияжа
+                                                </div>
+                                                <div class="tasks-item__holder tasks-holder">
+                                                    <div class="tasks-holder__btns">
+                                                        <div class="tasks-holder__btn tasks-holder__btn--work">
+                                                            В работе
+                                                        </div>
+                                                        <div class="tasks-holder__btn tasks-holder__btn--waiting">
+                                                            Ожидает проверки
+                                                        </div>
+                                                    </div>
+                                                    <div class="tasks-holder__info tasks-info">
+                                                        <div class="tasks-info__time">
+                                                            19 ч
+                                                        </div>
+                                                        <div class="tasks-info__value">
+                                                            300
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="tasks__item tasks-item waiting">
+                                                <div class="tasks-item__title">
+                                                    Сделать подарочный сертификат
+                                                </div>
+                                                <div class="tasks-item__text">
+                                                    Сделать подарочный сертификат для студии макияжа
+                                                </div>
+                                                <div class="tasks-item__holder tasks-holder">
+                                                    <div class="tasks-holder__btns">
+                                                        <div class="tasks-holder__btn tasks-holder__btn--work">
+                                                            В работе
+                                                        </div>
+                                                        <div class="tasks-holder__btn tasks-holder__btn--waiting">
+                                                            Ожидает проверки
+                                                        </div>
+                                                    </div>
+                                                    <div class="tasks-holder__info tasks-info">
+                                                        <div class="tasks-info__time">
+                                                            19 ч
+                                                        </div>
+                                                        <div class="tasks-info__value">
+                                                            300
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+
+                                        <div class="tasks__more">
+                                            <a class="tasks__more-link" href="#">
+                                                <img src="images/profile-performer/arrow-down-tasks.svg" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    $(document).ready(function(){
+        $('#new_reflink_button').click(function(){
+            $.ajaxSetup({
+              headers: {
+                  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
+              }
+          });
+          $.ajax({
+          url: "{% url 'Manage:generate_ref_link'%}",
+          method: 'POST',
+          data: {
+            'id': 1
+          },
+          dataType: 'json',
+          success: function (data) {
+              $('#ref_links').prepend(
+                $('<div/>', {html:data.code})
+            );
+          }
+        });
+        });
+    });
+</script>
+{%endblock%}

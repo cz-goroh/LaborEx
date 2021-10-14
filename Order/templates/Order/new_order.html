@@ -1,0 +1,10 @@
+{%extends 'Manage/admin/cab_wrapper.html'%}
+
+{%block content%}
+<h2>Новый заказ</h2>
+<form method="post" action="">{%csrf_token%}
+
+{{form.as_p}}
+<input type="submit" value="go!" />
+</form>
+{%endblock%}

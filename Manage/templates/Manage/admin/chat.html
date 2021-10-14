@@ -1,0 +1,154 @@
+{%extends 'Manage/admin/cab_wrapper.html'%}
+
+{%block content%}
+<div>
+    {%for chat_user in users%}
+        <a href="{%url 'Manage:user_chat' chat_user.id%}">{{chat_user}}</a>
+    {%endfor%}
+</div>
+{%if dialog_user%}
+    Диалог с {{dialog_user.username}}
+    <div id='dropZone'>
+        <div id="chat_div">
+            {%for mes in messages%}
+            <div>
+                {{mes.user_from.username}}: {{mes.text}}
+                {%if mes.file%}
+                    <a href="{{mes.file.url}}">{{mes.file}}</a>
+                {%endif%}
+            </div>
+
+            {%endfor%}
+        </div>
+        <div>
+            <input id="chat_input" /><span id="filename"></span>
+            <input type="file" id='file' />
+            <button id='mess_snt' type="button">Отправить</button>
+            <!-- <input type="button" id="mess_snt" value="Отправить" /> -->
+        </div>
+    </div>
+{%endif%}
+<script>
+$(document).ready(function(){
+    try{
+        var sock = new WebSocket('ws://185.144.29.182:8080/ws/chat/');
+        //     var sock = new WebSocket('ws://' + window.location.host +':8085/ws/chat/');
+    }
+    catch(err){
+        var sock = new WebSocket('wss://' + window.location.host +'/ws/chat/');
+    }
+    sock.onmessage = function(mes){
+
+        mes_data = jQuery.parseJSON(mes.data);
+        if (mes_data.from_name){
+            console.log(mes.data);
+            $('<div/>', {
+                html: mes_data.from_name + ': ' + mes_data.text,
+            }).appendTo($('#chat_div'));
+        } else {
+            console.log(mes.data);
+        }
+    }
+
+    // DRAG AND DROP
+            if (typeof(window.FileReader) == 'undefined') {
+              console.log('Не поддерживается браузером!');
+            }
+            var dropZone = $('#dropZone'),
+                maxFileSize = 5000000;
+
+            dropZone[0].ondragover = function() {
+              dropZone.addClass('hover');
+              return false;
+            };
+            dropZone[0].ondragleave = function() {
+              dropZone.removeClass('hover');
+              return false;
+            };
+            dropZone[0].ondrop = function(event) {
+              event.preventDefault();
+              dropZone.removeClass('hover');
+              dropZone.addClass('drop');
+              console.log('drop');
+              var file_drop = event.dataTransfer.files[0];
+
+              if (file_drop.size > maxFileSize) {
+                  $('#filename').text('Файл слишком большой!');
+                  console.log('Файл слишком большой!');
+                  dropZone.addClass('error');
+                  return false;
+              } else {
+                // console.log(file_drop);
+                $('#file').prop("files", event.dataTransfer.files);
+                $('#filename').html(file_drop.name)
+                // console.log($('#file')[0].files[0]);
+              }
+            };
+
+    $('#mess_snt').click(function(){
+        var file = $('#file')[0].files[0];
+        console.log(file);
+        if (typeof file == 'undefined') {
+            sock.send(JSON.stringify(
+            {
+              "text":$('#chat_input').val(),
+              "user_from":{{request.user.id}},
+              "user_to":{{dialog_user.id}},
+              "file": false,
+              "filename": false,
+            }));
+        } else {
+            var reader = new FileReader();
+              reader.onload = function(event) {
+                  // console.log('File content:', event.target.result);
+                  sock.send(JSON.stringify(
+                    {
+                      "text":$('#chat_input').val(),
+                      "user_from":{{request.user.id}},
+                      "user_to":{{dialog_user.id}},
+                      "file": event.target.result,
+                      "filename": file.name,
+                    }));
+              };
+              reader.readAsDataURL(file);
+              console.log(file.name);
+        }
+    $('#chat_input').val('');
+    });
+
+    sock.onopen = function (event) {
+          console.log(event);
+          console.log('Connection to server started');
+          // inter = setInterval(() => sock.send_json(JSON.stringify(false)));
+
+          sock.send(JSON.stringify(
+            {
+              'text': '',
+              "user_from":{{request.user.id}},
+              "user_to":{{dialog_user.id}},
+              "file": null,
+              "filename": null,
+            }));
+            setInterval(function(){
+                sock.send(JSON.stringify(false));
+            }, 20000);
+      };
+
+    sock.onclose = function (event) {
+          console.log(event);
+          if(event.wasClean){
+              console.log('Clean connection end');
+          } else {
+              console.log('Connection broken');
+          }
+          {%if request.user.is_authenticated%}
+          // window.location.assign(window.location.href);
+          {%endif%}
+      };
+      sock.onerror = function (error) {
+          console.log(error);
+      };
+
+});
+</script>
+{%endblock%}

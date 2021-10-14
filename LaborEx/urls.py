@@ -14,12 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.auth.views import LogoutView
 from django.urls import path, include
-from Manage.views import index
+from Manage.views import index, ConfView, UserCabPage
+from django.conf.urls.static import static
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('manage/', include('Manage.urls')),
+    path('order/', include('Order.urls')),
+
+    path('conditions/', ConfView.as_view(), name='conditions'),
+    path('confedence/', ConfView.as_view(), name='confedence'),
+    # path('accounts/google/login/callback/', index, name='index_cab'),
 
     path('', index, name='index'),
-]
+    path('reflink/<str:code>/', index, name='reflink'),
+
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATIC_URL)
+urlpatterns += staticfiles_urlpatterns()

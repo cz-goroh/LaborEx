@@ -1,15 +1,26 @@
-
+{%if not request.user.is_authenticated%}
 <div>
     <h3>регистрация</h3>
-    <form class="" action="" method="post">
+    <form class=""
+    {%if refcode%}action="{% url 'reflink' refcode%}"{%else%} action="" {%endif%}
+    method="post">{%csrf_token%}
         <input name="email" type="email" />
         <input name="password" type="password"  />
         <input name="registr" type="submit"  />
     </form>
     <h3>Авторизация</h3>
-    <form action="" method="post">
-        <input name="email" type="email" />
+    <form action="" method="post">{%csrf_token%}
+        <input name="email" />
         <input name="password" type="password"  />
         <input name="auth" type="submit"  />
     </form>
 </div>
+<div>
+    <!-- <a href="{% url 'Manage:google_get_key'%}">google</a> -->
+</div>
+{%else%}
+    <div>
+        Главная страница
+        <a href="{% url 'Manage:user_cab'%}">Кабинет</a>
+        </div>
+{%endif%}

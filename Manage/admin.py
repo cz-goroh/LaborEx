@@ -8,4 +8,12 @@ class PersonAdmin(admin.ModelAdmin):
     search_fields = ['username', 'email']
 
 
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ['user_from', 'user_to', 'sent_time']
+
+
 admin.site.register(Person, PersonAdmin)
+admin.site.register(Message, MessageAdmin)
+admin.site.register(Rubric)
+admin.site.register(ReferalLink)
+# admin.site.register()
