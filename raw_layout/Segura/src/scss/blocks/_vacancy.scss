@@ -1,0 +1,61 @@
+.vacancy {
+  margin-bottom: 120px;
+  @media (max-width: 576px) {
+    margin-bottom: 75px;
+  }
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+    line-height: 40px;
+    color: $catalina-blue;
+    opacity: 0.7;
+    @media (max-width: 768px) {
+      max-width: 300px;
+      margin: 0 auto 40px;
+      font-size: 1.8rem;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    top: -160px;
+    right: -70px;
+    width: 640px;
+    height: 420px;
+    @media (max-width: 768px) {
+      width: 340px;
+      height: 212px;
+      right: -20px;
+      top: -180px;
+    }
+  }
+
+  &__planet {
+    width: 640px;
+    height: 420px;
+  }
+
+  &__button {
+    max-width: 286px;
+    height: 54px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+    @media (max-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+}

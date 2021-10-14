@@ -1,0 +1,119 @@
+.about {
+  margin-bottom: 45px;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    width: 426px;
+    height: 336px;
+    background-image: url('../img/about-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: absolute;
+    bottom: 0px;
+    right: -80px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &-astro {
+      position: absolute;
+      top: -160px;
+      right: -80px;
+      width: 546px;
+      height: 658px;
+      @media (max-width: 768px) {
+        width: 380px;
+        height: 360px;
+        top: -260px;
+        right: -15px;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 68px 60px 67px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.49) 0%, rgba(255, 255, 255, 0.24) 100%);
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 576px) {
+      padding: 50px 10px 40px;
+    }
+  }
+
+  &__items {
+    &:nth-child(1) {
+      margin-right: 120px;
+      @media (max-width: 768px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    max-width: 530px;
+    margin-bottom: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:nth-child(2) {
+      margin-bottom: 0;
+      @media (max-width: 768px) {
+        margin-bottom: 38px;
+      }
+    }
+  }
+
+  &__item--last {
+    max-width: 430px;
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__item-title {
+    max-width: 330px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 27px;
+    margin-bottom: 15px;
+    color: $catalina-blue;
+    opacity: 0.9;
+    & span {
+      color: #00b6bc;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__item-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    line-height: 135%;
+    color: $catalina-blue;
+    opacity: 0.7;
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+  }
+}
