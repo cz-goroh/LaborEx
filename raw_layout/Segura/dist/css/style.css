@@ -397,6 +397,11 @@ button {
 .modal__content--task {
   max-width: 860px;
 }
+@media (max-width: 576px) {
+  .modal__content--task {
+    padding: 0;
+  }
+}
 
 .modal-reg__create {
   font-size: 1.8rem;
@@ -658,6 +663,11 @@ button {
   margin-bottom: 15px;
   text-align: center;
 }
+@media (max-width: 576px) {
+  .modal-task__title {
+    font-size: 2.4rem;
+  }
+}
 .modal-task__form-wrapper {
   position: relative;
   width: 100%;
@@ -665,6 +675,11 @@ button {
   padding: 0 35px 50px;
   background-color: #f9faff;
   border-radius: 10px;
+}
+@media (max-width: 576px) {
+  .modal-task__form-wrapper {
+    padding: 0 15px 50px;
+  }
 }
 .modal-task__form {
   width: 100%;
@@ -675,6 +690,7 @@ button {
 .modal-task__form-prev {
   width: 35px;
   height: 55px;
+  cursor: pointer;
 }
 .modal-task__form-text {
   width: 100%;
@@ -705,11 +721,27 @@ button {
   color: #043b74;
   opacity: 0.5;
 }
+@media (max-width: 576px) {
+  .modal-task__form-text::-moz-placeholder {
+    font-size: 1.6rem;
+  }
+  .modal-task__form-text:-ms-input-placeholder {
+    font-size: 1.6rem;
+  }
+  .modal-task__form-text::placeholder {
+    font-size: 1.6rem;
+  }
+}
 .modal-task__form-descr {
   font-size: 1.6rem;
   line-height: 26px;
   color: #043b74;
   opacity: 0.5;
+}
+@media (max-width: 576px) {
+  .modal-task__form-descr {
+    font-size: 1.4rem;
+  }
 }
 .modal-task__button {
   position: absolute;

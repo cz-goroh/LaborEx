@@ -44,6 +44,9 @@
 
   &--task {
     max-width: 860px;
+    @media (max-width: 576px) {
+      padding: 0;
+    }
   }
 }
 
@@ -299,16 +302,21 @@
     line-height: 56px;
     margin-bottom: 15px;
     text-align: center;
+    @media (max-width: 576px) {
+      font-size: 2.4rem;
+    }
   }
 
   &__form-wrapper {
     position: relative;
     width: 100%;
     max-width: 860px;
-    // height: 350px;
     padding: 0 35px 50px;
     background-color: $zircon;
     border-radius: 10px;
+    @media (max-width: 576px) {
+      padding: 0 15px 50px;
+    }
   }
 
   &__form {
@@ -322,6 +330,7 @@
   &__form-prev {
     width: 35px;
     height: 55px;
+    cursor: pointer;
   }
 
   &__form-text {
@@ -339,6 +348,9 @@
       line-height: 26px;
       color: $catalina-blue;
       opacity: 0.5;
+      @media (max-width: 576px) {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -347,6 +359,9 @@
     line-height: 26px;
     color: $catalina-blue;
     opacity: 0.5;
+    @media (max-width: 576px) {
+      font-size: 1.4rem;
+    }
   }
 
   &__button {
