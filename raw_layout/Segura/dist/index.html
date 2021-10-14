@@ -243,26 +243,45 @@
 <!-- /.container -->
 
 <div class="container container--modal">
-	<div class="modal" id="task-modal">
-		<div class="modal__content">
+	<div class="modal modal-task" id="task-modal">
+
+		<div class="modal-task__header">
+			<div class="logo">logo</div>
+			<div class="registration__links">
+				<button class="registration__link" data-modal="input-modal">Войти</button>
+				<span>или</span>
+				<button class=" registration__link" data-modal="registr-modal">Зарегистрироваться</button>
+			</div>
+		</div>
+		<!-- /.modal-task__header -->
+
+		<div class="modal__content modal__content--task">
 
 			<div class="modal-task__container">
 				<h2 class="modal-task__title title">Создание задания</h2>
 				<!-- /.modal-task__title -->
-				<form action="#" method="" class="modal-task__form">
-					<div class="modal-task__form-header">
-						<svg class="modal-task__form-prev">
-							<use xlink:href=""></use>
-						</svg>
 
-					</div>
-					<!-- /.modal-task__form-header -->
-					<textarea name="" id="" cols="30" rows="10" class="modal-task__form-text"></textarea>
-					<!-- /#.modal-task__form-text -->
-				</form>
-				<!-- /.modal-task__form -->
-				<button class="modal-task__button btn btn--java">Найти исполнителя</button>
-				<!-- /.modal-task__button btn btn--java -->
+				<div class="modal-task__form-wrapper">
+					<form action="#" method="" class="modal-task__form">
+						<div class="modal-task__form-header">
+							<svg class="modal-task__form-prev">
+								<use xlink:href="img/icons/sprite.svg#arrow-prev"></use>
+							</svg>
+						</div>
+						<!-- /.modal-task__form-header -->
+						<textarea name="description" id="" class="modal-task__form-text" placeholder="Подробно опишите ваше задание"></textarea>
+						<!-- /#.modal-task__form-text -->
+						<p class="modal-task__form-descr">
+							Подробное описание — минимум 20 символов
+						</p>
+						<!-- /.modal-task__form-descr -->
+						<button class="modal-task__button btn btn--java">Найти исполнителя</button>
+						<!-- /.modal-task__button btn btn--java -->
+					</form>
+					<!-- /.modal-task__form -->
+				</div>
+				<!-- /.modal-task__form-wrapper -->
+
 			</div>
 			<!-- /.modal-task__container -->
 

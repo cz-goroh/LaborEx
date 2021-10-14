@@ -41,6 +41,10 @@
   @media (max-width: 576px) {
     padding: 0 10px;
   }
+
+  &--task {
+    max-width: 860px;
+  }
 }
 
 // * Registration ============================
@@ -270,3 +274,87 @@
 }
 
 // * Task =================================
+
+.modal-task {
+  padding: 38px 23px;
+  &__header {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .registration__links {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 56px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    // height: 350px;
+    padding: 0 35px 50px;
+    background-color: $zircon;
+    border-radius: 10px;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__form-header {
+    padding: 5px 0;
+  }
+
+  &__form-prev {
+    width: 35px;
+    height: 55px;
+  }
+
+  &__form-text {
+    width: 100%;
+    max-width: 795px;
+    height: 200px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    background: $water;
+    &::placeholder {
+      font-size: 1.8rem;
+      line-height: 26px;
+      color: $catalina-blue;
+      opacity: 0.5;
+    }
+  }
+
+  &__form-descr {
+    font-size: 1.6rem;
+    line-height: 26px;
+    color: $catalina-blue;
+    opacity: 0.5;
+  }
+
+  &__button {
+    position: absolute;
+    width: 250px;
+    height: 54px;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
