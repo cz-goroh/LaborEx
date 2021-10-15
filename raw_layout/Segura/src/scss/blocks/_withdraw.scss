@@ -1,0 +1,83 @@
+.withdraw {
+  position: relative;
+  margin-bottom: 120px;
+  &__title {
+    padding: 0;
+    margin-bottom: 10px;
+    @media (max-width: 768px) {
+      width: 255px;
+      position: absolute;
+      top: 53px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 164%;
+    color: $catalina-blue;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      width: 300px;
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 300px;
+      font-size: 1.8rem;
+      line-height: 30px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 60px;
+    background: $zircon;
+    box-shadow: -5px 5px 20px rgba(0, 59, 118, 0.1);
+    border-radius: 10px;
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: 768px) {
+      padding: 250px 60px 50px;
+    }
+    @media (max-width: 460px) {
+      padding: 250px 20px 50px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+      @media (max-width: 768px) {
+        margin-bottom: 50px;
+      }
+      @media (max-width: 576px) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__bank {
+    width: 240px;
+    height: 90px;
+  }
+
+  &__qiwi {
+    width: 200px;
+    height: 90px;
+  }
+
+  &__paypal {
+    width: 250px;
+    height: 66px;
+  }
+}

@@ -1,0 +1,85 @@
+.reviews {
+  margin-bottom: 120px;
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__slider {
+    position: relative;
+    margin-right: -250px;
+    padding-right: 250px;
+  }
+
+  &__item {
+    width: 367px;
+    padding: 41px 25px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid $white;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+  }
+
+  &__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+
+  &__item-name {
+    & h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 26px;
+      color: $catalina-blue;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__item-btn {
+    font-size: 1.6rem;
+    color: $catalina-blue;
+    background-color: $periwincle;
+    padding: 9px 23px;
+  }
+
+  &__item-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+
+  &__item-body {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 26px;
+    color: $catalina-blue;
+    opacity: 0.8;
+    margin-bottom: 24px;
+  }
+
+  &__item-link {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $science-blue;
+  }
+
+  &__button-next {
+    display: none;
+    position: absolute;
+    z-index: 500;
+    width: 17px;
+    height: 30px;
+    bottom: 30px;
+    left: 50%;
+    cursor: pointer;
+    @media (max-width: 460px) {
+      display: block;
+    }
+  }
+}

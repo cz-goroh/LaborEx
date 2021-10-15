@@ -1,0 +1,95 @@
+<div class="container">
+  <header class="header">
+    <div class="header__up">
+      <a href="index.html" class="logo__link">
+        <div class="logo">logo</div>
+      </a>
+      <div class="registration">
+        <div class="registration__links">
+          <button class="registration__link" data-modal="input-modal">Войти</button>
+          <span>или</span>
+          <button class=" registration__link" data-modal="registr-modal">Зарегистрироваться</button>
+        </div>
+        <button class="task" data-modal="task-modal">Дать задание</button>
+      </div>
+      <!-- /.registration -->
+      <div class="burger">
+        <div class="burger__icon">
+          <svg class="burger__svg">
+            <use xlink:href="img/icons/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <!-- /.burger__icon -->
+        <div class="burger__menu">
+          <div class="burger__menu-header">
+            <div class="burger__menu-close">
+              <img src="img/cross.svg" alt="cross">
+            </div>
+            <!-- /.burger__menu-close -->
+          </div>
+          <!-- /.burger__menu-header -->
+          <ul class="burger__list">
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Дизайн</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Разработка и IT</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Тексты и переводы</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">SEO и трафик</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Соцсети и реклама</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Аудио, видео, съёмка</a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__item-link">Бизнес и жизнь</a>
+            </li>
+          </ul>
+          <!-- /.burger__list -->
+        </div>
+        <!-- /.burger__menu -->
+      </div>
+      <!-- /.burger -->
+    </div>
+    <!-- /.header__up -->
+    <div class="header__down">
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Дизайн</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Разработка и IT</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Тексты и переводы</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">SEO и трафик</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Соцсети и реклама</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Аудио, видео, съёмка</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__item-link">Бизнес и жизнь</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.header__down -->
+  </header>
+  <!-- /.header -->
+</div>
+<!-- /.container -->
+
+<!-- Modal Window -->
+@@include('_modal-input.html')
+@@include('_modal-reg.html')
+@@include('_modal-task.html')

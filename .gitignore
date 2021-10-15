@@ -5,8 +5,12 @@
 
 # Node artifact files
 node_modules/
+<<<<<<< HEAD
 #dist/
 
+=======
+# dist/
+>>>>>>> segur
 # Compiled Java class files
 *.class
 
@@ -32,7 +36,7 @@ legacy/
 
 # Maven
 target/
-dist/
+# dist/
 
 # JetBrains IDE
 .idea/

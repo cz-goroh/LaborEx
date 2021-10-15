@@ -1,0 +1,375 @@
+.modal {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  top: -160px;
+  left: 0;
+  background: rgba(84, 120, 189, 0.08);
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  backdrop-filter: blur(30px);
+  border-radius: 25px;
+  z-index: 10;
+  @media (max-width: 1078px) {
+    top: -115px;
+  }
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 445px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: transform 0.3s linear, opacity 0.3s linear;
+  @media (max-width: 576px) {
+    padding: 0 10px;
+  }
+
+  &--task {
+    max-width: 860px;
+    @media (max-width: 576px) {
+      padding: 0;
+    }
+  }
+}
+
+// * Registration ============================
+.modal-reg {
+  &__create {
+    font-size: 1.8rem;
+    line-height: 165%;
+    color: $catalina-blue;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    @media (max-width: 576px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__accounts {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    width: 79px;
+    height: 54px;
+  }
+
+  &__btn-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 56px;
+    margin-bottom: 20px;
+    @media (max-width: 576px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+      max-width: 260px;
+    }
+  }
+
+  &__question {
+    font-size: 1.8rem;
+    line-height: 29px;
+    color: $dark;
+    margin-right: 30px;
+    @media (max-width: 576px) {
+      margin-left: 30px;
+    }
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    line-height: 29px;
+    text-decoration: underline;
+    color: $link;
+    border: none;
+    background: transparent;
+  }
+}
+
+// * Form ==============================
+.form {
+  width: 100%;
+  margin-bottom: 20px;
+  @media (max-width: 576px) {
+    margin-bottom: 50px;
+  }
+
+  &__btns-type {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    width: 195px;
+    height: 54px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 26px;
+    color: $science-blue;
+    @media (max-width: 576px) {
+      width: 145px;
+      height: 48px;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    background: $zircon;
+    box-shadow: -5px 5px 20px rgba(0, 59, 118, 0.1);
+    border: none;
+    border-radius: 10px;
+    &::placeholder {
+      font-size: 1.8rem;
+      line-height: 26px;
+      color: $catalina-blue;
+      opacity: 0.5;
+    }
+  }
+
+  &__remember {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 576px) {
+      margin: 10px 0 30px;
+    }
+    & .form__politics {
+      margin: 20px 0 30px 55px;
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+
+  &__recovery-link {
+    font-size: 1.8rem;
+    line-height: 29px;
+    color: $link;
+    @media (max-width: 576px) {
+      margin-left: auto;
+    }
+  }
+
+  &__politics {
+    position: relative;
+    padding-top: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    display: inline-block;
+    max-width: 340px;
+    font-size: 1.4rem;
+    line-height: 20px;
+    font-weight: 400;
+    color: $catalina-blue;
+    opacity: 0.6;
+    @media (max-width: 576px) {
+      max-width: 250px;
+      padding-left: 30px;
+      font-size: 1.2rem;
+      line-height: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 40px;
+      height: 40px;
+      left: -55px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: $zircon;
+      box-shadow: -5px 5px 20px rgba(0, 59, 118, 0.1);
+      border-radius: 10px;
+      @media (max-width: 576px) {
+        left: -25px;
+      }
+    }
+  }
+
+  &__check {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:checked + .form__label::before {
+      position: absolute;
+      content: '';
+      display: block;
+      left: -55px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background-image: url('../img/checked.svg');
+      background-repeat: no-repeat;
+      background-size: 17px 18px;
+      background-position: center;
+    }
+  }
+
+  &__submit {
+    width: 216px;
+    height: 54px;
+    font-size: 1.6rem;
+    line-height: 20px;
+    font-weight: 700;
+    color: $white;
+    &-input {
+      width: 160px;
+    }
+  }
+}
+
+// * Task =================================
+
+.modal-task {
+  padding: 38px 23px;
+  &__header {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & .registration__links {
+      margin: 0;
+    }
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 56px;
+    margin-bottom: 15px;
+    text-align: center;
+    @media (max-width: 576px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__form-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    padding: 0 35px 50px;
+    background-color: $zircon;
+    border-radius: 10px;
+    @media (max-width: 576px) {
+      padding: 0 15px 50px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__form-header {
+    padding: 5px 0;
+  }
+
+  &__form-prev {
+    width: 35px;
+    height: 55px;
+    cursor: pointer;
+  }
+
+  &__form-text {
+    width: 100%;
+    max-width: 795px;
+    height: 200px;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    background: $water;
+    &::placeholder {
+      font-size: 1.8rem;
+      line-height: 26px;
+      color: $catalina-blue;
+      opacity: 0.5;
+      @media (max-width: 576px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__form-descr {
+    font-size: 1.6rem;
+    line-height: 26px;
+    color: $catalina-blue;
+    opacity: 0.5;
+    @media (max-width: 576px) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    width: 250px;
+    height: 54px;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
