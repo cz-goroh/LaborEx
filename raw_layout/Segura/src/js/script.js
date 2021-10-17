@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // * Open-Close burger list ==============================
-  // =======================================================
+  // * =======================================================
 
   const buttonBurger = document.querySelector('.burger__icon');
   const menuClose = document.querySelector('.burger__menu-close');
@@ -136,4 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
   menuClose.addEventListener('click', () => {
     burgerMenu.classList.remove('active');
   });
+
+  // ! добавить условие на открытие-закрытие модалок..
 });
