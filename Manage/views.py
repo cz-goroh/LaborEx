@@ -23,6 +23,7 @@ class CabinetTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['hi'] = 'hi'
+        context['parent_rubrics'] = Rubric.objects.filter(parent__isnull=True)
         return context
 
 class ChatView(CabinetTemplateView):
