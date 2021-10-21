@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         modalContent.style.transform = 'none';
         modalContent.style.opacity = '1';
-      }, 3);
+      }, 300);
     });
   });
 
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // * Open-Close burger list ==============================
-  // =======================================================
+  // * =======================================================
 
   const buttonBurger = document.querySelector('.burger__icon');
   const menuClose = document.querySelector('.burger__menu-close');

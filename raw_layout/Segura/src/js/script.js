@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         modalContent.style.transform = 'none';
         modalContent.style.opacity = '1';
-      }, 3);
+      }, 300);
     });
   });
 
@@ -136,6 +136,4 @@ document.addEventListener('DOMContentLoaded', () => {
   menuClose.addEventListener('click', () => {
     burgerMenu.classList.remove('active');
   });
-
-  // ! добавить условие на открытие-закрытие модалок..
 });
