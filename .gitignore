@@ -5,10 +5,8 @@
 
 # Node artifact files
 node_modules/
-<<<<<<< HEAD
 #dist/
 
-=======
 # dist/
 >>>>>>> segur
 # Compiled Java class files
@@ -20,7 +18,7 @@ node_modules/
 *.mo
 
 # environment
-# *.env
+*.env
 env/
 legacy/
 .ftpconfig

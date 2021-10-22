@@ -7,6 +7,7 @@ from django.conf import settings
 class Rubric(models.Model):
     """Рубрики сервиса"""
     name = models.CharField('Название', max_length=255)
+    slug = models.CharField('URL строка', max_length=255, null=True)
     parent = models.ForeignKey("self", null=True, on_delete=models.SET_NULL,
                                 blank=True)
     is_top = models.BooleanField('Топовая рубрика', default=False)
@@ -23,6 +24,7 @@ class Person(AbstractUser):
     money =  models.DecimalField(max_digits=20, decimal_places=2,
                                     verbose_name="Личный счёт", default=0)
     tel = models.CharField('tel', max_length=255, null=True, blank=True)
+    city = models.CharField('Город', max_length=255, null=True)
     refer = models.ForeignKey("self", null=True, on_delete=models.SET_NULL,
                                 blank=True)
     rubrics = models.ManyToManyField(Rubric, verbose_name='Рубрики исполнители')

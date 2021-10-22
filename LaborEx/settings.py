@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
     'Manage.apps.ManageConfig',
     'Order',
-
+    'Blog',
 
     'allauth',
     'allauth.account',

@@ -1,0 +1,832 @@
+{%extends 'Blog/wrapper.html'%}
+{%load static%}
+{%block content%}
+<!-- First screen -->
+<section class="first">
+<div class="container">
+<div class="first__head">
+    <div class="first__head-title-block">
+        <p class="first__suptitle">
+            Фриланс платформа
+        </p>
+        <!-- /.first__text -->
+        <h1 class="first__title title">
+            Исполнители для любых&nbsp;заданий
+        </h1>
+        <!-- /.first__title title -->
+    </div>
+    <!-- /.first__head-title-block -->
+
+    <div class="first__buttons">
+        <a href="" class="btn btn--java first__button">Найти исполнителя</a>
+        <!-- /.btn first__button -->
+        <a href="implementer.html" class="btn btn--white first__button">Стать исполнителем</a>
+        <!-- /.btn first__button -->
+    </div>
+    <!-- /.first__buttons -->
+
+    <div class="first__img">
+        <picture>
+            <source media="(max-width:768px)" srcset="{% static 'Blog/img/robot-sm.png' %}" />
+            <img src="{% static 'Blog/img/robot.png' %}" alt="robot">
+        </picture>
+
+    </div>
+    <!-- /.first__img -->
+</div>
+<!-- /.first__head -->
+
+<div class="first__bottom">
+    <div class="first__items">
+        <div class="first__item">
+            <h2 class="first__item-title">589 920</h2>
+            <!-- /.first__item-title -->
+            <p class="first__item-text">
+                исполнителей готовы&nbsp;помочь&nbsp;вам
+            </p>
+            <!-- /.first__item-text -->
+        </div>
+        <!-- /.first__item item -->
+        <div class="first__item">
+            <h2 class="first__item-title">2 241 153</h2>
+            <!-- /.first__item-title -->
+            <p class="first__item-text">
+                заданий&nbsp;уже&nbsp;выполнены
+            </p>
+            <!-- /.first__item-text -->
+        </div>
+        <!-- /.first__item item -->
+        <div class="first__item">
+            <h2 class="first__item-title">35 секунд</h2>
+            <!-- /.first__item-title -->
+            <p class="first__item-text">
+                до первого отклика на&nbsp;ваше задание
+            </p>
+            <!-- /.first__item-text -->
+        </div>
+        <!-- /.first__item -->
+    </div>
+    <!-- /.first__items -->
+</div>
+<!-- /.first__bottom -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.first -->
+
+
+<!-- Work -->
+<section class="work">
+<div class="container">
+<div class="work__header">
+    <h2 class="work__title title">
+        Как это работает?
+    </h2>
+    <!-- /.work__title title -->
+    <p class="work__subtitle">
+        Идеально подходит для бизнеса и для себя
+    </p>
+    <!-- /.work__subtitle -->
+    <div class="work__img">
+        <img src="{% static 'Blog/img/rocket.png' %}" alt="rocket">
+    </div>
+    <!-- /.work__img -->
+</div>
+<!-- /.work__header -->
+
+<div class="work__items">
+    <div class="work__item">
+        <div class="work__item-img">1</div>
+        <!-- /.work__item-img -->
+        <div class="work__item-header">
+            <h3 class="work__item-title">Создайте задание</h3>
+            <svg class="work__item-icon">
+                <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#pencil"></use>
+            </svg>
+            <!-- /.work__item-icon -->
+        </div>
+        <!-- /.work__item-title -->
+        <p class="work__item-text">
+            Опишите, что нужно сделать
+        </p>
+        <!-- /.work__item-text -->
+    </div>
+    <!-- /.work__item item -->
+
+    <div class="work__item">
+        <div class="work__item-img">2</div>
+        <!-- /.work__item-img -->
+        <div class="work__item-header">
+            <h3 class="work__item-title">Находим за 2 минуты!</h3>
+            <svg class="work__item-icon">
+                <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#time"></use>
+            </svg>
+            <!-- /.work__item-icon -->
+        </div>
+        <!-- /.work__item-title -->
+        <p class="work__item-text">
+            Подбираем лучших исполнителей&nbsp;для вашего задания,&nbsp;вы выбираете одного
+        </p>
+        <!-- /.work__item-text -->
+    </div>
+    <!-- /.work__item item -->
+
+    <div class="work__item">
+        <div class="work__item-img">3</div>
+        <!-- /.work__item-img -->
+        <div class="work__item-header">
+            <h3 class="work__item-title">Платите за готовое</h3>
+            <svg class="work__item-icon">
+                <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#check-mark"></use>
+            </svg>
+            <!-- /.work__item-icon -->
+        </div>
+        <!-- /.work__item-title -->
+        <p class="work__item-text">
+            Оплачиваете, только если вы&nbsp;довольны результатом
+        </p>
+        <!-- /.work__item-text -->
+    </div>
+    <!-- /.work__item item -->
+
+</div>
+<!-- /.work__items -->
+</div>
+
+<!-- /.container -->
+</section>
+<!-- /.work -->
+
+
+<!-- Advantages -->
+<section class="advantages">
+<div class="container">
+<h2 class="advantages__title title">Наши преимущества</h2>
+<!-- /.advantages__title title -->
+
+<div class="advantages__items">
+
+    <div class="advantages__items-col">
+        <div class="advantages__item">
+            <div class="advantages__icon">
+                <svg class="advantages__icon">
+                    <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#payment"></use>
+                </svg>
+            </div>
+            <!-- /.advantages__icon -->
+            <div class="advantages__description">
+                <div class="advantages__item-title">Защищенные платежи!</div>
+                <!-- /.advantages__item-title -->
+                <p class="advantages__text">
+                    Ваш платеж будет переведен исполнителю&nbsp;только&nbsp;после подтверждения&nbsp;работы
+                </p>
+                <!-- /.advantages__text -->
+            </div>
+            <!-- /.advantages__description -->
+        </div>
+        <!-- /.advantages__item -->
+
+
+
+        <div class="advantages__item">
+            <div class="advantages__icon">
+                <svg class="advantages__icon">
+                    <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#shield"></use>
+                </svg>
+            </div>
+            <!-- /.advantages__icon -->
+            <div class="advantages__description">
+                <div class="advantages__item-title">Надежные исполнители</div>
+                <!-- /.advantages__item-title -->
+                <p class="advantages__text">
+                    Исполнители допускаются
+                    к&nbsp;работе&nbsp;по&nbsp;результатам тестирования и&nbsp;при&nbsp;выполнении всех требований
+                </p>
+                <!-- /.advantages__text -->
+            </div>
+            <!-- /.advantages__description -->
+        </div>
+        <!-- /.advantages__item -->
+    </div>
+
+    <div class="advantages__items-col">
+        <div class="advantages__item">
+            <div class="advantages__icon">
+                <svg class="advantages__icon">
+                    <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#investment"></use>
+                </svg>
+            </div>
+            <!-- /.advantages__icon -->
+            <div class="advantages__description">
+                <div class="advantages__item-title">Гарантия возврата</div>
+                <!-- /.advantages__item-title -->
+                <p class="advantages__text">
+                    Вы всегда сможете вернуть свои&nbsp;деньги,&nbsp;если&nbsp;результат работы&nbsp;вас&nbsp;не&nbsp;устроит
+                </p>
+                <!-- /.advantages__text -->
+            </div>
+            <!-- /.advantages__description -->
+        </div>
+        <!-- /.advantages__item -->
+
+        <div class="advantages__item">
+            <div class="advantages__icon">
+                <svg class="advantages__icon">
+                    <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#traced"></use>
+                </svg>
+            </div>
+            <!-- /.advantages__icon -->
+            <div class="advantages__description">
+                <div class="advantages__item-title">Отсутствие комиссии</div>
+                <!-- /.advantages__item-title -->
+                <p class="advantages__text">
+                    Мы не снимаем комиссию при&nbsp;оплате&nbsp;заданий!
+                </p>
+                <!-- /.advantages__text -->
+            </div>
+            <!-- /.advantages__description -->
+        </div>
+        <!-- /.advantages__item -->
+    </div>
+
+</div>
+<!-- /.advantages__items -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.advantages -->
+
+
+<!-- Tasks -->
+<section class="tasks">
+<div class="container">
+<h2 class="tasks__title title">
+    Выполнено <span>55 868</span> заданий за месяц
+</h2>
+<!-- /.tasks__title title -->
+<div class="tasks__header">
+    <p class="tasks__header-name">
+        Название и описание задания
+    </p>
+    <!-- /.tasks__header-name -->
+    <div class="tasks__header-items">
+        <p class="tasks__header-price">
+            Cтоимость задания
+        </p>
+        <!-- /.tasks__header-price -->
+        <p class="tasks__header-search">
+            Поиск исполнителя
+        </p>
+        <!-- /.tasks__header-search -->
+        <p class="tasks__header-time">
+            Время выполнения
+        </p>
+        <!-- /.tasks__header-time -->
+    </div>
+    <!-- /.tasks__header-items -->
+</div>
+<!-- /.tasks__header -->
+
+<div class="tasks__cards">
+
+    <div class="tasks__card">
+        <div class="tasks__card-description">
+            <h3 class="tasks__card-title">
+                Сделать подарочный сертификат
+            </h3>
+            <!-- /.tasks__card-title -->
+            <p class="tasks__card-text">
+                Учтены все замечания, выполнено отлично!
+            </p>
+            <!-- /.tasks__card-text -->
+            <button class="tasks__card-design btn">Дизайн</button>
+            <!-- /.tasks__card-design -->
+        </div>
+        <!-- /.tasks__card-description -->
+        <div class="tasks__card-items">
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-price">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#price"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">300</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-timer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#timer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">54 сек</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-geer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#geer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">19 ч</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+        </div>
+        <!-- /.tasks__card-items -->
+    </div>
+    <!-- /.tasks__card -->
+
+    <div class="tasks__card">
+        <div class="tasks__card-description">
+            <h3 class="tasks__card-title">
+                Сделать подарочный сертификат
+            </h3>
+            <!-- /.tasks__card-title -->
+            <p class="tasks__card-text">
+                Учтены все замечания, выполнено отлично!
+            </p>
+            <!-- /.tasks__card-text -->
+            <button class="tasks__card-design btn">Дизайн</button>
+            <!-- /.tasks__card-design -->
+        </div>
+        <!-- /.tasks__card-description -->
+        <div class="tasks__card-items">
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-price">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#price"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">300</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-timer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#timer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">54 сек</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-geer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#geer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">19 ч</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+        </div>
+        <!-- /.tasks__card-items -->
+    </div>
+    <!-- /.tasks__card -->
+
+    <div class="tasks__card">
+        <div class="tasks__card-description">
+            <h3 class="tasks__card-title">
+                Сделать подарочный сертификат
+            </h3>
+            <!-- /.tasks__card-title -->
+            <p class="tasks__card-text">
+                Учтены все замечания, выполнено отлично!
+            </p>
+            <!-- /.tasks__card-text -->
+            <button class="tasks__card-design btn">Дизайн</button>
+            <!-- /.tasks__card-design -->
+        </div>
+        <!-- /.tasks__card-description -->
+
+        <div class="tasks__card-items">
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-price">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#price"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">300</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-timer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#timer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">54 сек</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+            <div class="tasks__card-item">
+                <div class="tasks__card-item-icon">
+                    <svg class="tasks__card-icon-geer">
+                        <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#geer"></use>
+                    </svg>
+                </div>
+                <!-- /.tasks__card-item-icon -->
+                <div class="tasks__card-item-text">19 ч</div>
+                <!-- /.tasks__card-item-text -->
+            </div>
+            <!-- /.tasks__card-item -->
+        </div>
+        <!-- /.tasks__card-items -->
+    </div>
+    <!-- /.tasks__card -->
+</div>
+<!-- /.tasks__cards -->
+
+<div class="tasks__buttons">
+    <button class="tasks__button btn btn--white">Посмотреть все задания</button>
+    <!-- /.tasks__button -->
+</div>
+<!-- /.tasks__buttons -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.tasks -->
+{#include 'Blog/map.html'#}
+
+<!-- Reviews -->
+<section class="reviews">
+<div class="container">
+<h2 class="reviews__title title">Отзывы наших пользователей</h2>
+<!-- /.reviews__title title -->
+
+<div class="swiper reviews__slider">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+        <div class="swiper-slide reviews__item">
+            <div class="reviews__item-header">
+                <div class="reviews__item-name">
+                    <h3>Лиля Переводова</h3>
+                    <button class="reviews__item-btn btn">Заказчик</button>
+                </div>
+                <div class="reviews__item-avatar">
+                    <img src="{% static 'Blog/img/avatar.jpg' %}" alt="avatar">
+                </div>
+            </div>
+            <!-- /.reviews__item-header -->
+            <p class="reviews__item-body">
+                Вообще не&nbsp;представляю себе свою работу без Workzilla.
+                Я пользуюсь этой платформой, чтобы найти исполнителей
+                и на&nbsp;личные задачи, и&nbsp;на рабочие.
+                Причём, здесь можно найти исполнителя практически
+                на&nbsp;любую задачу. Это очень экономит время.
+            </p>
+            <!-- /.reviews__item-body -->
+            <a href="" class="reviews__item-link">Больше</a>
+            <!-- /.reviews__item-link -->
+        </div>
+        <!-- /.swiper-slide reviews__item -->
+
+    </div>
+    <!-- /.swiper-wrapper -->
+
+    <div class="reviews__button-next ">
+        <img src="{% static 'Blog/img/arrow-next.svg' %}" alt="arrow">
+    </div>
+    <!-- /.review__button-next -->
+</div>
+<!-- /.reviews__slider swiper -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.reviews -->
+
+<!-- Questions -->
+<section class="questions">
+<div class="container">
+<h2 class="questions__title title">Часто задаваемые вопросы</h2>
+<!-- /.questions__title title -->
+<div class="questions__accordion accordion">
+    <div class="accordion__wrapper">
+
+        <div class="accordion__item">
+            <div class="accordion__item-title">
+                <div class="accordion__item-title-text">
+                    Почему система требует пополнить баланс, хотя у меня хватает денег на задание
+                </div>
+                <div class="accordion__item-title-icon"></div>
+            </div>
+            <!-- /.item__title -->
+            <div class="accordion__item-content">
+                <p>
+                    Скорее всего имеющиеся средства у вас уже зарезервированы для оплаты
+                    другого задания, которое либо находится в работе или на него откликнулись
+                    кандидаты (в этом случае происходит автоматическое резервирование стоимости
+                    задания в буфер, чтобы гарантировать оплату задания, если оно перейдет в работу).
+                </p>
+            </div>
+            <!-- /.item__content -->
+        </div>
+        <!-- /.accordion__item -->
+
+        <div class="accordion__item">
+            <div class="accordion__item-title">
+                <div class="accordion__item-title-text">
+                    Какие гарантии, что моя задача будет выполнена?
+                </div>
+                <div class="accordion__item-title-icon"></div>
+            </div>
+            <!-- /.item__title -->
+            <div class="accordion__item-content">
+                <p>
+                    Но непосредственные участники технического существует
+                    прогресса представлены в исключительно положительном свете!
+                    Господа, повышение уровня гражданского сознания обеспечивает
+                    широкому кругу (специалистов) участие в формировании
+                    анализа существующих паттернов поведения.
+                </p>
+            </div>
+            <!-- /.item__content -->
+        </div>
+        <!-- /.accordion__item -->
+
+        <div class="accordion__item">
+            <div class="accordion__item-title">
+                <div class="accordion__item-title-text">
+                    Я не вижу свои задания в работе / У меня некорректно отображается страница в браузере
+                </div>
+                <div class="accordion__item-title-icon"></div>
+            </div>
+            <!-- /.item__title -->
+            <div class="accordion__item-content">
+                <p>
+                    Ясность нашей позиции очевидна: синтетическое тестирование
+                    однозначно определяет каждого участника как способного
+                    принимать собственные решения касаемо экспериментов,
+                    поражающих по своей масштабности и грандиозности.
+                    Имеется спорная точка зрения, гласящая примерно следующее:
+                    акционеры крупнейших компаний объективно рассмотрены
+                    соответствующими инстанциями. Семантический разбор внешних
+                    противодействий позволяет выполнить важные задания по
+                    разработке позиций, занимаемых участниками в отношении
+                    поставленных задач.
+                </p>
+            </div>
+            <!-- /.item__content -->
+        </div>
+        <!-- /.accordion__item -->
+
+        <div class="accordion__item">
+            <div class="accordion__item-title">
+                <div class="accordion__item-title-text">
+                    Как мне максимально быстро получить ответ на свой вопрос от службы поддержки?
+                </div>
+                <div class="accordion__item-title-icon"></div>
+            </div>
+            <!-- /.item__title -->
+            <div class="accordion__item-content">
+                <p>
+                    Ясность нашей позиции очевидна: синтетическое тестирование
+                    однозначно определяет каждого участника как способного
+                    принимать собственные решения касаемо экспериментов,
+                    поражающих по своей масштабности и грандиозности.
+                    Имеется спорная точка зрения, гласящая примерно следующее:
+                    акционеры крупнейших компаний объективно рассмотрены
+                    соответствующими инстанциями. Семантический разбор внешних
+                    противодействий позволяет выполнить важные задания по
+                    разработке позиций, занимаемых участниками в отношении
+                    поставленных задач.
+                </p>
+            </div>
+            <!-- /.item__content -->
+        </div>
+        <!-- /.accordion__item -->
+    </div>
+    <!-- /.accordion__wrapper -->
+</div>
+<!-- /.questions__accordion accordion -->
+
+<div class="questions-info">
+    Здесь вы найдёте <a href="" class="questions-info__link">больше информации</a>
+</div>
+<!-- /.questions-info -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.questions -->
+
+
+<!-- About -->
+<section class="about">
+<div class="container">
+<div class="about__wrapper">
+    <h2 class="about__title title">О нас</h2>
+    <!-- /.about__title title -->
+
+    <div class="about__image"></div>
+    <div class="about__image-astro">
+        <picture>
+            <source media="(max-width: 768px)" srcset="{% static 'Blog/img/astro-sm.png' %}">
+            <img src="{% static 'Blog/img/astro.png' %}" alt="astro">
+        </picture>
+    </div>
+
+    <!-- /.about__image -->
+
+    <div class="about__description">
+        <div class="about__items">
+            <div class="about__item">
+                <h3 class="about__item-title">
+                    Биржа труда <span>proofex</span> - никаких комиссий за использование.
+                </h3>
+                <p class="about__item-text">
+                    Proofex - дружественная среда, для поиска исполнителя или заказчика
+                    гарантирующая результат. Доверьте выполнение ваших задач надежным людям,
+                    а сами займитесь чем -нибудь приятным. Наша нейронная сеть предложит
+                    подходящих кандидатов рядом с вами, для выполнения любой задачи.
+                </p>
+            </div>
+            <!-- /.about__item -->
+            <div class="about__item">
+                <h3 class="about__item-title">Важно!</h3>
+                <p class="about__item-text">
+                    Прежде чем поручить задание, посетите профиль кандидата и почитайте
+                    отзывы других заказчиков о его работе. Вы оплачиваете только выполненную
+                    работу, которой остались довольны. Найдя исполнителя по душе,
+                    создавайте для него личные задания и работайте на долгосрочной основе.
+                </p>
+            </div>
+            <!-- /.about__item -->
+        </div>
+        <!-- /.about__items -->
+        <div class="about__items">
+            <div class="about__item about__item--last">
+                <h3 class="about__item-title">Как это работает? </h3>
+                <p class="about__item-text">
+                    Найти исполнителя легко. Разместите название и&nbsp;опишите задачу. Назначьте цену.
+                    Уже через пару минут несколько десятков исполнителей будут бороться
+                    за ваше задание, этого вам не предложит другой сервис. Нейронная сеть
+                    спрогнозирует результат выполнения для каждого конкретного поручения
+                    и отберет лучших исполнителей для ваших задач.
+                </p>
+            </div>
+            <!-- /.about__item -->
+        </div>
+        <!-- /.about__items -->
+    </div>
+    <!-- /.about__description -->
+</div>
+<!-- /.about__wrapper -->
+</div>
+<!-- /.container -->
+</section>
+<!-- /.about -->
+
+
+
+{%endblock%}

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from Manage.views import index, ConfView, UserCabPage
+from Blog.views import IndexView, RubricView, auth_form, ImplementerView
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -28,14 +29,17 @@ urlpatterns = [
 
     path('conditions/', ConfView.as_view(), name='conditions'),
     path('confedence/', ConfView.as_view(), name='confedence'),
+    path('implementer/', ImplementerView.as_view(), name='implementer'),
     # path('accounts/google/login/callback/', index, name='index_cab'),
 
-    path('', index, name='index'),
+    path('', IndexView.as_view(), name='index'),
     path('reflink/<str:code>/', index, name='reflink'),
 
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
+    path('auth_form/', auth_form, name='auth_form'),
 
+    path('rubric/<str:slug>', RubricView.as_view(), name='rubric'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATIC_URL)
 urlpatterns += staticfiles_urlpatterns()

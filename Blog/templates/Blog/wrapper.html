@@ -1,0 +1,276 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+<!-- Useful meta tags -->
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="icon" href="{% static 'Blog/img/favicon.ico' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static 'Blog/img/favicon.ico' %}" type="image/x-icon">
+<!-- <title></title> -->
+<link rel="stylesheet" href="{% static 'Blog/css/vendor/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'Blog/css/vendor/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'Blog/css/style.min.css' %}">
+
+	<title>Proofex - Заказчик</title>
+</head>
+
+
+<!-- BASE CONTENT -->
+
+<body>
+
+	<div class="body-wrapper">
+
+		<!--	HEADER -->
+		<div class="container">
+  <header class="header">
+    <div class="header__up">
+      <a href="index.html" class="logo__link">
+        <div class="logo">logo</div>
+      </a>
+      <div class="registration">
+        <div class="registration__links">
+          <button class="registration__link" data-modal="input-modal">Войти</button>
+          <span>или</span>
+          <button class=" registration__link" data-modal="registr-modal">Зарегистрироваться</button>
+        </div>
+        <button class="task" data-modal="task-modal">Дать задание</button>
+      </div>
+      <!-- /.registration -->
+      <div class="burger">
+        <div class="burger__icon">
+          <svg class="burger__svg">
+            <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#burger"></use>
+          </svg>
+        </div>
+        <!-- /.burger__icon -->
+        <div class="burger__menu">
+          <div class="burger__menu-header">
+            <div class="burger__menu-close">
+              <img src="{% static 'Blog/img/cross.svg' %}" alt="cross">
+            </div>
+            <!-- /.burger__menu-close -->
+          </div>
+          <!-- /.burger__menu-header -->
+          <ul class="burger__list">
+			{%for rubric in parent_rubrics%}
+	            <li class="menu__item">
+	              <a href="{% url 'rubric' rubric.slug %}" class="menu__item-link">{{rubric}}</a>
+	            </li>
+			{%endfor%}
+          </ul>
+          <!-- /.burger__list -->
+        </div>
+        <!-- /.burger__menu -->
+      </div>
+      <!-- /.burger -->
+    </div>
+    <!-- /.header__up -->
+    <div class="header__down">
+      <ul class="menu">
+		{%for rubric in parent_rubrics%}
+	        <li class="menu__item">
+	          <a href="{% url 'rubric' rubric.slug %}" class="menu__item-link">{{rubric}}</a>
+	        </li>
+        {%endfor%}
+      </ul>
+    </div>
+    <!-- /.header__down -->
+  </header>
+  <!-- /.header -->
+</div>
+<!-- /.container -->
+
+<!-- Modal Window -->
+<div class="container container--modal">
+	<div class="modal" id="input-modal">
+		<div class="modal__content">
+			<p class="modal-reg__create">Войдите через соцсети</p>
+			<!-- /.modal-reg__create -->
+
+			<div class="modal-reg__accounts">
+				<button class="modal-reg__btn btn btn--white">
+					<img src="{% static 'Blog/img/facebook.svg' %}" alt="facebook" class="modal-reg__btn-icon">
+				</button>
+				<!-- /.modal-reg__btn -->
+				<a href="{% url 'Manage:google_get_key'%}" class="modal-reg__btn btn btn--white">
+					<svg class="modal-reg__btn-icon">
+						<use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#google"></use>
+					</svg>
+				</a>
+				<!-- /.modal-reg__btn -->
+			</div>
+			<!-- /.modal-reg__accounts -->
+
+			<h2 class="modal-reg__title title">Вход в сервис</h2>
+
+			<form action="{%url 'auth_form'%}" method="post" class="modal-reg__form form">{%csrf_token%}
+				<input  name="email" class="form__input" placeholder="Ваш e-mail">
+				<input name="password" type="password" class="form__input" placeholder="Пароль">
+				<!-- /.form__input -->
+				<div class="form__remember">
+					<div class=" form__politics">
+						<input type="checkbox" id="remember" class="form__check">
+						<label for="remember" class="form__label">
+							Запомнить меня
+						</label>
+					</div>
+					<!-- /.form__politics -->
+					<a href="" class="form__recovery-link">Забыли пароль?</a>
+					<!-- /.form__recovery-link -->
+				</div>
+				<!-- /.form__remember -->
+				<button class="btn btn--java form__submit form__submit-input" type="submit">Войти</button>
+				<!-- /.form__submit -->
+			</form>
+			<!-- /.modal-reg__form -->
+
+			<div class="modal-reg__registration">
+				<p class="modal-reg__question">Нет аккаунта?</p>
+				<!-- /.modal-reg__question -->
+				<button class="modal-reg__link" data-modal="registr-modal">Зарегистрироваться</button>
+				<!-- /.modal-reg__link -->
+			</div>
+			<!-- /.modal-reg__registration -->
+
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>
+<!-- /.container -->
+
+<div class="container container--modal">
+	<div class="modal" id="registr-modal">
+		<div class="modal__content">
+			<p class="modal-reg__create">Создать аккаунт с помощью соцсети</p>
+			<!-- /.modal-reg__create -->
+
+			<div class="modal-reg__accounts">
+				<button class="modal-reg__btn btn btn--white">
+					<img src="{% static 'Blog/img/facebook.svg' %}" alt="facebook" class="modal-reg__btn-icon">
+				</button>
+				<!-- /.modal-reg__btn -->
+				<a href="{% url 'Manage:google_get_key'%}" class="modal-reg__btn btn btn--white">
+					<svg class="modal-reg__btn-icon">
+						<use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#google"></use>
+					</svg>
+				</a>
+				<!-- /.modal-reg__btn -->
+			</div>
+			<!-- /.modal-reg__accounts -->
+
+			<h2 class="modal-reg__title title">Регистрация</h2>
+
+			<form action="" class="modal-reg__form form">
+				<div class="form__btns-type">
+					<button class="form__btn btn btn--white">Заказчик</button>
+					<!-- /.form__btn btn btn--white -->
+					<button class="form__btn btn btn--white">Исполнитель</button>
+					<!-- /.form__btn btn btn--white -->
+				</div>
+				<!-- /.form__btns-type -->
+
+				<input type="text" class="form__input" placeholder="Ваше имя">
+				<input type="email" class="form__input" placeholder="Ваш e-mail">
+				<input type="password" class="form__input" placeholder="Пароль">
+				<!-- /.form__input -->
+				<div class="form__politics">
+					<input type="checkbox" id="confirm" class="form__check">
+					<label for="confirm" class="form__label">
+						Согласен на обработку персональных данных
+						и ознакомлен с Политикой конф. и Польз. согл.
+					</label>
+				</div>
+				<!-- /.form__politics -->
+				<button class="btn btn--java form__submit" type="submit">Регистрация</button>
+				<!-- /.form__submit -->
+			</form>
+			<!-- /.modal-reg__form -->
+
+			<div class="modal-reg__registration">
+				<p class="modal-reg__question">Уже есть аккаунт?</p>
+				<!-- /.modal-reg__question -->
+				<a href="" class="modal-reg__link">Войти</a>
+				<!-- /.modal-reg__link -->
+			</div>
+			<!-- /.modal-reg__account -->
+
+
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>
+<!-- /.container -->
+
+<div class="container container--modal">
+	<div class="modal modal-task" id="task-modal">
+
+		<div class="modal-task__header">
+			<div class="logo">logo</div>
+			<div class="registration__links">
+				<button class="registration__link" data-modal="input-modal">Войти</button>
+				<span>или</span>
+				<button class=" registration__link" data-modal="registr-modal">Зарегистрироваться</button>
+			</div>
+		</div>
+		<!-- /.modal-task__header -->
+
+		<div class="modal__content modal__content--task">
+
+			<div class="modal-task__container">
+				<h2 class="modal-task__title title">Создание задания</h2>
+				<!-- /.modal-task__title -->
+
+				<div class="modal-task__form-wrapper">
+					<form action="#" method="" class="modal-task__form">
+						<div class="modal-task__form-header">
+							<svg class="modal-task__form-prev">
+								<use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#arrow-prev"></use>
+							</svg>
+						</div>
+						<!-- /.modal-task__form-header -->
+						<textarea name="description" id="" class="modal-task__form-text" placeholder="Подробно опишите ваше задание"></textarea>
+						<!-- /#.modal-task__form-text -->
+						<p class="modal-task__form-descr">
+							Подробное описание — минимум 20 символов
+						</p>
+						<!-- /.modal-task__form-descr -->
+						<button class="modal-task__button btn btn--java">Найти исполнителя</button>
+						<!-- /.modal-task__button btn btn--java -->
+					</form>
+					<!-- /.modal-task__form -->
+				</div>
+				<!-- /.modal-task__form-wrapper -->
+
+			</div>
+			<!-- /.modal-task__container -->
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>
+<!-- /.container -->
+{%block content%}{%endblock%}
+
+<!-- FOOTER -->
+
+</div>
+
+
+<script src="{% static 'Blog/js/libs/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'Blog/js/script.min.js' %}"></script>
+
+</body>
+
+</html>

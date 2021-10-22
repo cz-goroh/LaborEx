@@ -1,5 +1,5 @@
 {%extends 'Manage/admin/cab_wrapper.html'%}
-
+{%load static%}
 {%block content%}
 {%csrf_token%}
 <!-- <a href="{%url 'Manage:user_chat' 0%}">Чат</a>
@@ -69,7 +69,7 @@
                             <div class="performer__container">
                                 <div class="performer__left">
                                     <div class="performer__img">
-                                        <img src="images/profile-performer/profile-user.png" alt="">
+                                        <img src="{% static 'Manage/admin/images/profile-performer/profile-user.png' %}" alt="">
                                     </div>
                                     <div class="performer__referal referal">
                                         <div class="referal__quantity">
@@ -94,11 +94,12 @@
                                     <div class="performer__wrap performer-wrap">
                                         <div class="performer-wrap__name">
                                             <div class="performer-wrap__img">
-                                                <img src="images/profile-performer/profile-user-mini.png" alt="">
+                                                <img src="{% static 'Manage/admin/images/profile-performer/profile-user-mini.png' %}" alt="">
                                             </div>
                                             <div class="performer__name name">
                                                 <a class="name__title" href="#">
-                                                    Лиля Переводова
+                                                    {{request.user.last_name}}
+                                                    {{request.user.first_name}}
                                                 </a>
                                                 <div class="name__place">
                                                     Москва, Россия
@@ -202,7 +203,7 @@
 
                                         <div class="tasks__more">
                                             <a class="tasks__more-link" href="#">
-                                                <img src="images/profile-performer/arrow-down-tasks.svg" alt="">
+                                                <img src="{% static 'Manage/admin/images/profile-performer/arrow-down-tasks.svg' %}" alt="" />
                                             </a>
                                         </div>
                                     </div>
