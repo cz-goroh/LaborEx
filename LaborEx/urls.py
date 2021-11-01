@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('manage/', include('Manage.urls')),
     path('order/', include('Order.urls')),
+    path('blog/', include('Blog.urls')),
 
     path('conditions/', ConfView.as_view(), name='conditions'),
     path('confedence/', ConfView.as_view(), name='confedence'),

@@ -14,4 +14,5 @@ urlpatterns = [
 
     path('generate_ref_link/', views.generate_ref_link,
          name='generate_ref_link'),
+
 ]

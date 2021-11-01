@@ -51,5 +51,18 @@ def auth_form(request):
         return HttpResponseRedirect('/manage/user_cab/')
     return HttpResponseRedirect('/')
 
+
+def ajax_auth(request):
+    post = request.POST
+    user = authenticate(
+        request,
+        username=post['email'],
+        password=post['password']
+    )
+    if user is not None:
+        login(request, user)
+        return JsonResponse({'auth': True, 'user': user.id})
+    return JsonResponse({'auth': False})
+
 def registration(request):
     return HttpResponseRedirect('/')
