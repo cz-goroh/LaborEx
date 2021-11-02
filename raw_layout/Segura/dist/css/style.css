@@ -2389,19 +2389,145 @@ button {
 
 .filters {
   width: 100%;
-  height: 638px;
+  padding: 20px 15px;
   margin-bottom: 30px;
+}
+.filters__head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.filters__img {
+  width: 22px;
+  height: 18px;
+  margin-right: 15px;
+}
+.filters__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0068c9;
+}
+.filters__category {
+  width: 182px;
+  height: 38px;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+  line-height: 18px;
+  color: rgba(6, 39, 72, 0.7);
+  border: 1px solid rgba(4, 59, 116, 0.3);
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filters__category-img {
+  width: 10px;
+  height: 5px;
+}
+
+.budget {
+  margin-bottom: 10px;
+}
+.budget__check {
+  margin-bottom: 5px;
+}
+.budget__check:nth-child(5) {
+  margin-bottom: 15px;
+}
+.budget__check label {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.7);
+}
+.budget__range {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.budget__range-input {
+  width: 86px;
+  height: 27px;
+  border: 1px solid rgba(4, 59, 116, 0.3);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 4px 0 4px 10px;
+  background: transparent;
+}
+.budget__range-input::-moz-placeholder {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.4);
+}
+.budget__range-input:-ms-input-placeholder {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.4);
+}
+.budget__range-input::placeholder {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.4);
+}
+
+.filter-offers {
+  margin-bottom: 10px;
+}
+.filter-offers__check {
+  margin-bottom: 5px;
+}
+.filter-offers__check:nth-child(5) {
+  margin-bottom: 15px;
+}
+.filter-offers__check label {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.7);
+}
+
+.filter-tasks {
+  margin-bottom: 10px;
+}
+.filter-tasks__check {
+  margin-bottom: 5px;
+}
+.filter-tasks__check:nth-child(2) {
+  margin-bottom: 15px;
+}
+.filter-tasks__check label {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.7);
 }
 
 .statics {
   width: 100%;
-  height: 167px;
+  padding: 20px 15px;
   margin-bottom: 30px;
+}
+.statics__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0068c9;
+  margin-bottom: 15px;
+}
+.statics__list {
+  width: 100%;
+}
+.statics__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.statics__text {
+  font-size: 1.4rem;
+  color: rgba(6, 39, 72, 0.7);
+}
+.statics__result {
+  font-size: 1.4rem;
+  color: #1fc7bd;
 }
 
 .task-card {
   width: 100%;
-  height: 186px;
   padding: 35px 60px;
   margin-bottom: 10px;
   display: flex;
