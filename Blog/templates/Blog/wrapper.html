@@ -101,12 +101,31 @@
 <script src="{% static 'Blog/js/script.min.js' %}"></script>
 <script>
     $(document).ready(function(){
+		$.ajaxSetup({
+		  headers: {
+			  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
+		  }
+	  });
+		$('#send_order_landos').click(function(){
+			console.log('snd_landos');
+			$.ajax({
+			url: "{% url 'Order:save_order_desc'%}",
+			method: 'POST',
+			data: { 'order_desc': $('#order_desc').val(), },
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+			}
+		  });
+
+		});
+
         $('#login_button').click(function(){
-            $.ajaxSetup({
-              headers: {
-                  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
-              }
-          });
+          //   $.ajaxSetup({
+          //     headers: {
+          //         "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
+          //     }
+          // });
           $.ajax({
           url: "{% url 'Blog:ajax_auth'%}",
           method: 'POST',

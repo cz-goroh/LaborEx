@@ -2,6 +2,7 @@ from django.shortcuts import render
 import logging
 from django.views.generic import TemplateView, FormView, ListView
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.core.cache import cache
 from .models import *
 from .forms import *
 
@@ -59,3 +60,9 @@ def accept_offer(request):
         order.price = offer.price
         order.save()
     return HttpResponseRedirect('/order/')
+
+
+def save_order_desc(request):
+    request.session = request.POST['order_desc']
+    # print(request.session)
+    return JsonResponse({'ord': 'hi'})
