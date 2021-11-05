@@ -14,6 +14,8 @@
 
 //==== Blocks ====
 @import 'blocks/header';
+@import 'blocks/exchange';
+@import 'blocks/exchange-header';
 @import 'blocks/modal';
 @import 'blocks/first';
 @import 'blocks/work';
@@ -25,8 +27,8 @@
 @import 'blocks/reviews';
 @import 'blocks/questions';
 @import 'blocks/about';
+@import 'blocks/filters';
+@import 'blocks/statics';
+@import 'blocks/task-card';
 
 @import 'blocks/footer';
-
-//====  Mediaquery  ====
-@import 'media';

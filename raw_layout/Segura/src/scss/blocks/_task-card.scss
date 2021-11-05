@@ -1,0 +1,106 @@
+.task-card {
+  width: 100%;
+  padding: 35px 60px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__description {
+    position: relative;
+  }
+
+  &__title {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $catalina-blue;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    position: absolute;
+    top: -5px;
+    right: 85px;
+    width: 105px;
+    height: 38px;
+    background: $periwincle;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $venice-blue;
+  }
+
+  &__text {
+    max-width: 580px;
+    font-size: 1.6rem;
+    line-height: 21px;
+    font-weight: 400;
+    color: $catalina-blue;
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+  }
+
+  &__timer-descr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__price {
+    display: flex;
+    margin-right: 40px;
+  }
+
+  &__price--i {
+    width: 45px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  &__price--text {
+    font-size: 2.4rem;
+    color: $catalina-blue;
+    opacity: 0.7;
+  }
+
+  &__time {
+    display: flex;
+  }
+
+  &__time--i {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  &__time--text {
+    font-size: 2.4rem;
+    color: $catalina-blue;
+    opacity: 0.7;
+  }
+
+  &__detailed {
+    width: 170px;
+    height: 48px;
+    background: $zircon;
+    box-shadow: -5px 5px 20px rgba(0, 79, 157, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $science-blue;
+  }
+}

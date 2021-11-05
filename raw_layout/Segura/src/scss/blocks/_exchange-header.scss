@@ -1,0 +1,188 @@
+.header-exchange {
+  padding: 13px 0;
+  margin-bottom: 18px;
+  background: $white;
+  box-shadow: 0px 0px 20px rgba(34, 62, 104, 0.26);
+  &__inner {
+    display: flex;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: start;
+    & .menu {
+      &__logo {
+        margin-right: 70px;
+      }
+
+      &__list {
+        display: flex;
+        align-items: center;
+      }
+
+      &__item {
+        width: max-content;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        &:not(:last-child) {
+          margin-right: 40px;
+        }
+      }
+
+      &__item-link {
+        font-family: 'Helvetica', sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: $button-link;
+        transition: color 0.3s ease-in-out;
+        &:hover,
+        &.active {
+          color: $persian;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  &__info {
+  }
+
+  &__burger {
+  }
+
+  &__burger-line {
+  }
+
+  &__menu-mobile {
+    display: none;
+  }
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 170px;
+    height: 39px;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: $white;
+    margin-left: 15px;
+  }
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__notifications {
+    position: relative;
+    width: 32px;
+    height: 35px;
+  }
+
+  &__notifications-link {
+  }
+
+  &__notifications-value {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    width: min-content;
+    height: 15px;
+    padding: 3px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background: $science-blue;
+  }
+
+  &__wrap {
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  &__money {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &__money-price {
+    display: flex;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $button-link;
+  }
+
+  &__money-img {
+    width: 35px;
+    height: 23px;
+    margin-left: 10px;
+  }
+
+  &__price {
+    display: flex;
+  }
+
+  &__price-value {
+    width: max-content;
+    color: $blue-whale;
+    opacity: 0.6;
+  }
+
+  &__price-text {
+    width: max-content;
+    margin-left: 10px;
+    color: $blue-whale;
+    opacity: 0.6;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 13px;
+  }
+}
+
+.menu-mobile {
+  &__tasks {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__item-link {
+  }
+}

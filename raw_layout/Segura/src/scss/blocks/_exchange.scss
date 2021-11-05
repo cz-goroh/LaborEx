@@ -1,0 +1,55 @@
+.exchange {
+  &-main {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  &-filters {
+    width: 100%;
+    max-width: 212px;
+  }
+
+  &-cards {
+    width: 100%;
+    max-width: 975px;
+
+    &__pagination {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 30px auto 65px;
+      width: 315px;
+      height: 30px;
+    }
+  }
+}
+
+.pagination {
+  &__img {
+    width: 35px;
+  }
+
+  &__img--next {
+    transform: rotateY(180deg);
+  }
+
+  &__list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 2rem;
+    color: $button-link;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: $persian;
+      text-decoration: underline;
+    }
+  }
+}

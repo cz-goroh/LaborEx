@@ -1,0 +1,33 @@
+.statics {
+  width: 100%;
+  padding: 20px 15px;
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $science-blue;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    color: rgba(6, 39, 72, 0.7);
+  }
+
+  &__result {
+    font-size: 1.4rem;
+    color: $java;
+  }
+}

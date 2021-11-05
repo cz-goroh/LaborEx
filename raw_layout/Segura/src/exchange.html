@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  @@include('_exchange-head.html')
+  <title>Proofex - Биржа</title>
+</head>
+
+
+<!-- BASE CONTENT -->
+
+<body>
+
+  <div class="body-wrapper">
+    <!--	HEADER -->
+    @@include('_exchange-header.html')
+
+    <div class="container">
+      <main class="exchange-main">
+        <aside class="exchange-filters">
+          @@include('_filters.html')
+          @@include('_statics.html')
+        </aside>
+        <!-- /.exchange-filters -->
+        <div class="exchange-cards">
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+          @@include('_task-card.html')
+
+          <div class="exchange-cards__pagination pagination">
+            <div class="pagination__img">
+              <svg class="pagination__img">
+                <use xlink:href="img/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </div>
+            <ul class="pagination__list">
+              <li><a href="" class="pagination__link">1</a></li>
+              <li><a href="" class="pagination__link">2</a></li>
+              <li><a href="" class="pagination__link">3</a></li>
+              <li><a href="" class="pagination__link">4</a></li>
+              <li><a href="" class="pagination__link">5</a></li>
+              <li><a href="" class="pagination__link">...</a></li>
+              <li><a href="" class="pagination__link">17</a></li>
+            </ul>
+            <div class="pagination__img pagination__img--next">
+              <svg class="pagination__img ">
+                <use xlink:href="img/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </div>
+          </div>
+          <!-- /.exchange-cards__pagination -->
+        </div>
+        <!-- /.exchange-cards -->
+      </main>
+      <!-- /.exchange-main -->
+    </div>
+    <!-- /.container -->
+
+    <!-- FOOTER -->
+    <!-- @@include('_footer.html') -->
+  </div>
+
+
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -25,6 +25,16 @@
   align-items: center;
 }
 
+.modal__close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
 .modal__content {
   position: relative;
   width: 100%;
@@ -283,7 +293,7 @@
   &__header {
     position: absolute;
     width: 100%;
-    top: 40px;
+    top: 50px;
     padding: 0 25px;
     display: flex;
     justify-content: space-between;

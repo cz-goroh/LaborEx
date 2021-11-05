@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   modalBtn.forEach((item) => {
     item.addEventListener('click', (event) => {
+      event.preventDefault();
       let $this = event.currentTarget;
       let modalId = $this.getAttribute('data-modal');
       let modal = document.getElementById(modalId);
       let modalContent = modal.querySelector('.modal__content');
+
 
       modalContent.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         modalContent.style.transform = 'none';
         modalContent.style.opacity = '1';
-      }, 3);
+      }, 300);
     });
   });
 
@@ -124,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // * Open-Close burger list ==============================
-  // =======================================================
+  // * =======================================================
 
   const buttonBurger = document.querySelector('.burger__icon');
   const menuClose = document.querySelector('.burger__menu-close');

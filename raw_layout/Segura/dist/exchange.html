@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+<!-- Useful meta tags -->
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/vendor/normalize.css">
+<link rel="stylesheet" href="css/style.min.css">
+
+  <title>Proofex - Биржа</title>
+</head>
+
+
+<!-- BASE CONTENT -->
+
+<body>
+
+  <div class="body-wrapper">
+    <!--	HEADER -->
+    <header class="header-exchange">
+  <div class="container">
+    <div class="header-exchange__inner">
+      <div class="header-exchange__menu menu">
+        <a class="menu__logo logo" href="index.html">
+          <img src="img/logo.svg" alt="logo">
+        </a>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__item-link active" href="#">
+              Биржа
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Мои задания
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Вакансии
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Чат
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.header-exchange__menu -->
+
+      <div class="header__info header-info">
+        <div class="header-info__box info-box">
+          <div class="info-box__content">
+            <div class="info-box__notifications">
+              <a class="info-box__notifications-link" href="#">
+                <img src="img/bell.svg" alt="bell">
+              </a>
+              <p class="info-box__notifications-value">1</p>
+            </div>
+            <a class="info-box__wrap" href="#">
+              <div class="info-box__money">
+                <div class="info-box__money-price">
+                  750
+                </div>
+                <svg class="info-box__money-img">
+                  <use xlink:href="img/icons/sprite.svg#price"></use>
+                </svg>
+              </div>
+              <div class="info-box__price">
+                <div class="info-box__price-value">
+                  2100,00
+                </div>
+                <div class="info-box__price-text">
+                  в буфере
+                </div>
+              </div>
+            </a>
+          </div>
+          <a class="info-box__img" href="#">
+            <img src="img/avatar.jpg" alt="avatar">
+          </a>
+        </div>
+        <a class="header-info__btn btn btn--java" href="#">
+          Дать задание
+        </a>
+      </div>
+      <!-- /.header__info -->
+
+      <div class="header__burger">
+        <div class="header__burger-line line-first"></div>
+        <div class="header__burger-line line-second"></div>
+        <div class="header__burger-line line-third"></div>
+      </div>
+
+      <div class="header__menu-mobile menu-mobile">
+        <a class="menu-mobile__tasks" href="#">
+          Задания
+        </a>
+        <ul class="menu-mobile__list">
+          <li class="menu-mobile__item">
+            <a class="menu-mobile__item-link" href="#">
+              Биржа
+            </a>
+          </li>
+          <li class="menu-mobile__item">
+            <a class="menu-mobile__item-link" href="#">
+              Мои задания
+            </a>
+          </li>
+          <li class="menu-mobile__item">
+            <a class="menu-mobile__item-link" href="#">
+              Вакансии
+            </a>
+          </li>
+          <li class="menu-mobile__item">
+            <a class="menu-mobile__item-link" href="#">
+              Чат
+            </a>
+          </li>
+        </ul>
+        <!-- /.menu-mobile__list -->
+      </div>
+    </div>
+    <!-- /.header-exchange__inner -->
+  </div>
+  <!-- /.container -->
+</header>
+
+<div class="container">
+  <div class="header__down">
+    <ul class="menu">
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Дизайн</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Разработка и IT</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Тексты и переводы</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">SEO и трафик</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Соцсети и реклама</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Аудио, видео, съёмка</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Бизнес и жизнь</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /.header__down -->
+</div>
+<!-- /.container -->
+
+
+    <div class="container">
+      <main class="exchange-main">
+        <aside class="exchange-filters">
+          <div class="filters card">
+	<div class="filters__head">
+		<img src="img/filter.svg" alt="filter" class="filters__img">
+		<h3 class="filters__title">Фильтры</h3>
+		<!-- /.filters__title -->
+	</div>
+	<!-- /.filters__head -->
+	<div class="filters__category">
+		<p>Все рубрики</p>
+		<img src="img/shevron.svg" alt="shevron" class="filters__category-img">
+	</div>
+	<!-- /.filters__category -->
+
+	<h3 class="filters__title budget">Бюджет</h3>
+	<!-- /.filters__title -->
+	<div class="budget__inputs">
+		<div class="budget__check">
+			<input type="checkbox" name="" id="budget1">
+			<label for="budget1">До 1 000 ₽</label>
+		</div>
+		<div class="budget__check">
+			<input type="checkbox" name="" id="budget2">
+			<label for="budget2"> 1 000 ₽ - 3 000 ₽</label>
+		</div>
+		<div class="budget__check">
+			<input type="checkbox" name="" id="budget3">
+			<label for="budget3">3 000 ₽ - 10 000 ₽</label>
+		</div>
+		<div class="budget__check">
+			<input type="checkbox" name="" id="budget4">
+			<label for="budget4">10 000 ₽ - 30 000 ₽</label>
+		</div>
+		<div class="budget__check">
+			<input type="checkbox" name="" id="budget5">
+			<label for="budget5">От 30 000 ₽</label>
+		</div>
+		<div class="budget__range">
+			<input type="text" name="" class="budget__range-input" placeholder="От руб.">
+			<input type="text" name="" class="budget__range-input" placeholder="До руб.">
+		</div>
+	</div>
+	<!-- /.budget__inputs -->
+
+	<h3 class="filters__title filter-offers">Количество предложений</h3>
+	<!-- /.filters__title -->
+	<div class="filter-offers__inputs">
+		<div class="filter-offers__check">
+			<input type="checkbox" name="" id="offers1">
+			<label for="offers1">До 5 (117)</label>
+		</div>
+		<div class="filter-offers__check">
+			<input type="checkbox" name="" id="offers2">
+			<label for="offers2">От 5 до 10 (46)</label>
+		</div>
+		<div class="filter-offers__check">
+			<input type="checkbox" name="" id="offers3">
+			<label for="offers3">От 10 до 15 (24)</label>
+		</div>
+		<div class="filter-offers__check">
+			<input type="checkbox" name="" id="offers4">
+			<label for="offers4">От 15 до 20 (17)</label>
+		</div>
+		<div class="filter-offers__check">
+			<input type="checkbox" name="" id="offers5">
+			<label for="offers5">От 20 (24)</label>
+		</div>
+	</div>
+	<!-- /.filter-offers__inputs -->
+
+	<h3 class="filters__title filter-tasks">Тип заданий</h3>
+	<!-- /.filters__title -->
+	<div class="filter-tasks__inputs">
+		<div class="filter-tasks__check">
+			<input type="checkbox" name="" id="tasks1">
+			<label for="tasks1">Онлайн-заданий</label>
+		</div>
+		<div class="filter-tasks__check">
+			<input type="checkbox" name="" id="tasks2">
+			<label for="tasks2">Оффлайн-задания</label>
+		</div>
+	</div>
+	<!-- /.filter-tasks__inputs -->
+
+</div>
+<!-- /.filters -->
+
+          <div class="statics card">
+	<h3 class="statics__title">Статистика биржи за&nbsp;месяц</h3>
+	<!-- /.statics__title -->
+	<ul class="statics__list">
+		<li class="statics__item">
+			<p class="statics__text">Проектов</p>
+			<span class="statics__result">16 182</span>
+		</li>
+		<!-- /.statics__item -->
+		<li class="statics__item">
+			<p class="statics__text">На сумму (₽)</p>
+			<span class="statics__result">167 083 625</span>
+		</li>
+		<!-- /.statics__item -->
+		<li class="statics__item">
+			<p class="statics__text">Заказов</p>
+			<span class="statics__result">6 514</span>
+		</li>
+		<!-- /.statics__item -->
+	</ul>
+	<!-- /.statics__list -->
+</div>
+<!-- /.statics card -->
+
+        </aside>
+        <!-- /.exchange-filters -->
+        <div class="exchange-cards">
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+          <div class="task-card card">
+	<div class="task-card__description">
+		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
+		<span class="task-card__label">Дизайн</span>
+		<p class="task-card__text">
+			Требуется графический дизайнер на долгосрочное сотрудничество
+			для выполнения периодических задач по дизайну карточек товара,
+			обложек, созданию баннеров и т.д. для выставлений в интернет-магазин.
+		</p>
+	</div>
+	<!-- /.task-card__description -->
+	<div class="task-card__timer">
+		<div class="task-card__timer-descr">
+			<div class="task-card__price">
+				<svg class="task-card__price--i">
+					<use xlink:href="img/icons/sprite.svg#price"></use>
+				</svg>
+				<p class="task-card__price--text">300</p>
+			</div>
+			<div class="task-card__time">
+				<svg class="task-card__time--i">
+					<use xlink:href="img/icons/sprite.svg#geer"></use>
+				</svg>
+				<p class="task-card__time--text"><span>19</span> ч</p>
+			</div>
+		</div>
+		<a href="" class="task-card__detailed">Подробнее</a>
+	</div>
+	<!-- /.task-card__timer -->
+
+</div>
+<!-- /.task-card card -->
+
+
+          <div class="exchange-cards__pagination pagination">
+            <div class="pagination__img">
+              <svg class="pagination__img">
+                <use xlink:href="img/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </div>
+            <ul class="pagination__list">
+              <li><a href="" class="pagination__link">1</a></li>
+              <li><a href="" class="pagination__link">2</a></li>
+              <li><a href="" class="pagination__link">3</a></li>
+              <li><a href="" class="pagination__link">4</a></li>
+              <li><a href="" class="pagination__link">5</a></li>
+              <li><a href="" class="pagination__link">...</a></li>
+              <li><a href="" class="pagination__link">17</a></li>
+            </ul>
+            <div class="pagination__img pagination__img--next">
+              <svg class="pagination__img ">
+                <use xlink:href="img/icons/sprite.svg#arrow-prev"></use>
+              </svg>
+            </div>
+          </div>
+          <!-- /.exchange-cards__pagination -->
+        </div>
+        <!-- /.exchange-cards -->
+      </main>
+      <!-- /.exchange-main -->
+    </div>
+    <!-- /.container -->
+
+    <!-- FOOTER -->
+    
+  </div>
+
+
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
