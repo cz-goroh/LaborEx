@@ -4,6 +4,7 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import authenticate, login
 from django.db.models import Q
 from django.conf import settings
+from django.core.cache import cache
 from Manage.models import *
 from .models import *
 
