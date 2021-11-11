@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // * Open-Close burger list ==============================
+  // * =======================================================
+
+  const buttonBurger = document.querySelector('.burger__icon');
+  const menuClose = document.querySelector('.burger__menu-close');
+  const burgerMenu = document.querySelector('.burger__menu');
+
+  buttonBurger.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+  });
+  menuClose.addEventListener('click', () => {
+    burgerMenu.classList.remove('active');
+  });
+
   // * Open-Close modals ===========================================
   // * =============================================================
 
@@ -14,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       let modalId = $this.getAttribute('data-modal');
       let modal = document.getElementById(modalId);
       let modalContent = modal.querySelector('.modal__content');
-
 
       modalContent.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -123,19 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-  });
-
-  // * Open-Close burger list ==============================
-  // * =======================================================
-
-  const buttonBurger = document.querySelector('.burger__icon');
-  const menuClose = document.querySelector('.burger__menu-close');
-  const burgerMenu = document.querySelector('.burger__menu');
-
-  buttonBurger.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-  });
-  menuClose.addEventListener('click', () => {
-    burgerMenu.classList.remove('active');
   });
 });

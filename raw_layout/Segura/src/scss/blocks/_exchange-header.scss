@@ -12,6 +12,8 @@
     justify-content: start;
     & .menu {
       &__logo {
+        width: 47px;
+        height: 40px;
         margin-right: 70px;
       }
 
@@ -44,21 +46,6 @@
         }
       }
     }
-  }
-}
-
-.header {
-  &__info {
-  }
-
-  &__burger {
-  }
-
-  &__burger-line {
-  }
-
-  &__menu-mobile {
-    display: none;
   }
 }
 
@@ -170,19 +157,5 @@
     border-radius: 50%;
     overflow: hidden;
     margin-left: 13px;
-  }
-}
-
-.menu-mobile {
-  &__tasks {
-  }
-
-  &__list {
-  }
-
-  &__item {
-  }
-
-  &__item-link {
   }
 }

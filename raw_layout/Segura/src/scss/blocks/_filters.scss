@@ -50,14 +50,48 @@
   }
 
   &__check {
+    position: relative;
     margin-bottom: 5px;
     &:nth-child(5) {
       margin-bottom: 15px;
     }
 
     & label {
+      display: inline-block;
+      padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $zircon;
+        border: 1px solid rgba(4, 59, 116, 0.3);
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+    }
+
+    & input {
+      position: absolute;
+      appearance: none;
+      &:checked + label::before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('../img/checked.svg');
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+        background-position: center;
+      }
     }
   }
 
@@ -91,14 +125,48 @@
   }
 
   &__check {
+    position: relative;
     margin-bottom: 5px;
     &:nth-child(5) {
       margin-bottom: 15px;
     }
 
     & label {
+      display: inline-block;
+      padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $zircon;
+        border: 1px solid rgba(4, 59, 116, 0.3);
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+    }
+
+    & input {
+      position: absolute;
+      appearance: none;
+      &:checked + label::before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('../img/checked.svg');
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+        background-position: center;
+      }
     }
   }
 }
@@ -109,14 +177,48 @@
   }
 
   &__check {
+    position: relative;
     margin-bottom: 5px;
     &:nth-child(2) {
       margin-bottom: 15px;
     }
 
     & label {
+      display: inline-block;
+      padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $zircon;
+        border: 1px solid rgba(4, 59, 116, 0.3);
+        box-sizing: border-box;
+        border-radius: 5px;
+      }
+    }
+
+    & input {
+      position: absolute;
+      appearance: none;
+      &:checked + label::before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('../img/checked.svg');
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+        background-position: center;
+      }
     }
   }
 }
