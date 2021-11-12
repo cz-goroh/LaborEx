@@ -160,3 +160,31 @@
     margin-left: 13px;
   }
 }
+
+.exchange-header.header__down {
+  display: block;
+  @media (max-width: 1140px) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  & .menu {
+    min-width: 1100px;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      &-link {
+        text-decoration: none;
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #062748;
+        opacity: 0.8;
+      }
+    }
+  }
+}
