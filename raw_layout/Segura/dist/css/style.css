@@ -410,11 +410,15 @@ button {
 .header-exchange__menu {
   display: flex;
   justify-content: start;
+  align-items: center;
 }
 .header-exchange__menu .menu__logo {
   width: 47px;
   height: 40px;
   margin-right: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-exchange__menu .menu__list {
   display: flex;

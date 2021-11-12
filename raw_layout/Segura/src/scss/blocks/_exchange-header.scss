@@ -10,11 +10,15 @@
   &__menu {
     display: flex;
     justify-content: start;
+    align-items: center;
     & .menu {
       &__logo {
         width: 47px;
         height: 40px;
         margin-right: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       &__list {
@@ -84,9 +88,6 @@
     position: relative;
     width: 32px;
     height: 35px;
-  }
-
-  &__notifications-link {
   }
 
   &__notifications-value {
