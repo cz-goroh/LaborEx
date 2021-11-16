@@ -29,7 +29,7 @@
   <div class="container">
     <div class="header-exchange__inner">
       <div class="header-exchange__menu menu">
-        <a class="menu__logo logo" href="index.html">
+        <a class="menu__logo" href="index.html">
           <img src="img/logo.svg" alt="logo">
         </a>
         <ul class="menu__list">
@@ -95,40 +95,61 @@
       </div>
       <!-- /.header__info -->
 
-      <div class="header__burger">
-        <div class="header__burger-line line-first"></div>
-        <div class="header__burger-line line-second"></div>
-        <div class="header__burger-line line-third"></div>
-      </div>
+      <div class="exchange-burger">
+        <div class="exchange-burger__icon open-popup" data-popup="popup1">
+          <svg class=" burger__svg">
+            <use xlink:href="img/icons/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <!-- /.burger__icon -->
+        <div class="exchange-modal" id="popup1">
+          <div class="exchange-modal__content">
+            <div class="exchange-modal__header">
+              <a class="menu__logo" href="index.html">
+                <img src="img/logo.svg" alt="logo">
+              </a>
+              <div class="close">
+                <img src="img/cross.svg" alt="cross">
+              </div>
+            </div>
+            <div class="exchange-modal__body">
+              <div class="exchange-modal__up">
+                <div class="exchange-modal__person">
+                  <a class="info-box__img" href="#">
+                    <img src="img/avatar.jpg" alt="avatar">
+                  </a>
+                  <p>Лиля Переводова</p>
+                </div>
+                <a class="info-box__wrap" href="#">
+                  <div class="info-box__money">
+                    <div class="info-box__money-price">
+                      750
+                    </div>
+                    <svg class="info-box__money-img">
+                      <use xlink:href="img/icons/sprite.svg#price"></use>
+                    </svg>
+                  </div>
+                  <div class="info-box__price">
+                    <div class="info-box__price-value">
+                      2100,00
+                    </div>
+                    <div class="info-box__price-text">
+                      в буфере
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- /.exchange-modal__up -->
+              <div class="exchange-modal__inner">
 
-      <div class="header__menu-mobile menu-mobile">
-        <a class="menu-mobile__tasks" href="#">
-          Задания
-        </a>
-        <ul class="menu-mobile__list">
-          <li class="menu-mobile__item">
-            <a class="menu-mobile__item-link" href="#">
-              Биржа
-            </a>
-          </li>
-          <li class="menu-mobile__item">
-            <a class="menu-mobile__item-link" href="#">
-              Мои задания
-            </a>
-          </li>
-          <li class="menu-mobile__item">
-            <a class="menu-mobile__item-link" href="#">
-              Вакансии
-            </a>
-          </li>
-          <li class="menu-mobile__item">
-            <a class="menu-mobile__item-link" href="#">
-              Чат
-            </a>
-          </li>
-        </ul>
-        <!-- /.menu-mobile__list -->
+              </div>
+              <!-- /.exchange-modal__inner -->
+            </div>
+          </div>
+        </div>
+        <!-- /.exchange-modal -->
       </div>
+      <!-- /.exchange-burger -->
     </div>
     <!-- /.header-exchange__inner -->
   </div>
@@ -136,7 +157,7 @@
 </header>
 
 <div class="container">
-  <div class="header__down">
+  <div class="exchange-header header__down">
     <ul class="menu">
       <li class="menu__item">
         <a href="" class="menu__item-link">Дизайн</a>
