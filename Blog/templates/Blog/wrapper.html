@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="{% static 'Blog/css/vendor/swiper-bundle.min.css' %}">
 <link rel="stylesheet" href="{% static 'Blog/css/style.min.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js"></script>
 	<title>Proofex - Заказчик</title>
 </head>
 
@@ -104,8 +105,46 @@
 		$.ajaxSetup({
 		  headers: {
 			  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
-		  }
-	  });
+			  }
+		  });
+		window.fbAsyncInit = function() {
+		   FB.init({
+			 appId      : 1113269256078528,
+			 cookie     : true,                     // Enable cookies to allow the server to access the session.
+			 xfbml      : true,                     // Parse social plugins on this webpage.
+			 version    : 'v12.0',       // Use this Graph API version for this call.
+		   });}
+
+	  	$('#facebook_reg ').click(
+			function(){
+				FB.login(function(response) {
+				  // handle the response
+				  console.log(response);
+				  if (response.status === 'connected') {
+				    // Logged into your webpage and Facebook.
+					FB.api('/me', {fields: 'name, email'}, function(response_me) {
+				      console.log( response_me);
+					  $.ajax({
+			          url: "{% url 'Manage:fb_registration'%}",
+			          method: 'POST',
+			          data: response_me,
+			          dataType: 'json',
+			          success: function (data) {
+			              if (data.auth) {
+							  location = '/manage/user_cab/';
+						  } else {
+							  // $('#wrong_pass_mess').show();
+							  }
+				          }
+				        });
+				    });
+				  } else {
+				    // The person is not logged into your webpage or we are unable to tell.
+				  }
+
+				}, {scope: 'public_profile,email'});
+			}
+		);
 		$('#send_order_landos').click(function(){
 			console.log('snd_landos');
 			$.ajax({
@@ -121,11 +160,6 @@
 		});
 
         $('#login_button').click(function(){
-          //   $.ajaxSetup({
-          //     headers: {
-          //         "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
-          //     }
-          // });
           $.ajax({
           url: "{% url 'Blog:ajax_auth'%}",
           method: 'POST',

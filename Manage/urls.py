@@ -11,6 +11,7 @@ urlpatterns = [
          name='user_chat'),
 
     path('google_get_key/', views.google_get_key, name='google_get_key'),
+    path('fb_registration/', views.fb_registration, name='fb_registration'),
 
     path('generate_ref_link/', views.generate_ref_link,
          name='generate_ref_link'),

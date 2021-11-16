@@ -4,7 +4,7 @@ from .models import *
 
 class PersonAdmin(admin.ModelAdmin):
     exclude = ['password', ]
-    list_display = ['username', 'money', ]
+    list_display = ['username', 'money', 'email']
     search_fields = ['username', 'email']
 
 

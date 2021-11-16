@@ -110,6 +110,25 @@ def generate_ref_link(request):
     return JsonResponse({'link': link, 'code': new_code})
 
 
+def fb_registration(request):
+    post = request.POST
+    is_person = Person.objects.filter(
+        Q(username=post['id']) |
+        Q(username=post['email']) |
+        Q(email=post['email'])
+    ).first()
+    if is_person:
+        login(request, is_person)
+        return JsonResponse({'user': is_person.id})
+    else:
+        new_pass = ''.join(choice(ascii_letters) for i in range(12))
+        new_user = Person.objects.create_user(post['id'], post['email'],
+                                   new_pass)
+        new_user.save()
+        login(request, new_user)
+        return JsonResponse({'user': new_user.id})
+
+
 def google_get_key(request):
     if 'code' in request.GET:
         # print(request.GET['code'])

@@ -18,8 +18,6 @@ class NewOfferFormView(FormView):
     form_class = NewOfferForm
 
     def form_valid(self, form, *args, **kwargs):
-        # print(kwargs)
-        # print(self.kwargs['order_id'])
         form.instance.order = Order.objects.get(pk=self.kwargs['order_id'])
         form.instance.worker = self.request.user
         self.object = form.save(commit=True)
@@ -33,7 +31,6 @@ class NewOrderFormView(FormView):
     success_url = '/order/new_order_succes/'
 
     def form_valid(self, form):
-        # print(self.request.POST)
         form.instance.client = self.request.user
         self.object = form.save(commit=True)
         self.object.save()
@@ -64,5 +61,4 @@ def accept_offer(request):
 
 def save_order_desc(request):
     request.session = request.POST['order_desc']
-    # print(request.session)
     return JsonResponse({'ord': 'hi'})
