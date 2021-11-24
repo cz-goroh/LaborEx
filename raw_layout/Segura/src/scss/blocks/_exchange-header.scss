@@ -372,6 +372,17 @@
       border-radius: 10px;
     }
 
+    & .tabs-triggers__item--active {
+      width: 220px;
+      height: 60px;
+      background: $periwincle;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      box-shadow: none;
+      position: relative;
+      transform: translateY(5px);
+    }
+
     & .tabs-content {
       width: 100%;
       height: 470px;
@@ -388,24 +399,77 @@
       background: $periwincle;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
+      padding: 15px 0 55px 40px;
+
+      // * Tabs content ===================
+      & .exchange-modal {
+        &__catalog {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        &__catalog-head {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          margin-bottom: 25px;
+        }
+
+        &__catalog-head-icon {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+
+        &__catalog-head-title {
+          font-size: 2rem;
+          font-weight: 400;
+          color: $blue-whale;
+          opacity: 0.7;
+        }
+
+        &__catalog-head-arrow {
+          width: 10px;
+          height: 12px;
+          margin-left: auto;
+          margin-right: 15px;
+        }
+
+        &__catalog-list {
+        }
+
+        &__catalog-list-item {
+          display: flex;
+          align-items: center;
+          margin-left: 15px;
+          margin-bottom: 25px;
+        }
+
+        &__catalog-list-icon {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+
+        &__catalog-list-text {
+          font-size: 2rem;
+          font-weight: 400;
+          color: $blue-whale;
+          opacity: 0.7;
+        }
+
+        &__catalog-hr {
+          width: 100%;
+          border: 1px solid rgba(4, 59, 116, 0.4);
+          margin-bottom: 25px;
+        }
+      }
     }
 
     & .tabs-content__item--active {
-      // display: block;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    & .tabs-triggers__item--active {
-      width: 220px;
-      height: 60px;
-      background: $periwincle;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      box-shadow: none;
-      position: relative;
-      transform: translateY(5px);
+      display: block;
     }
   }
 }

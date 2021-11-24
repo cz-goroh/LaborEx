@@ -783,6 +783,16 @@ button {
   box-shadow: -5px 5px 20px rgba(0, 79, 157, 0.15);
   border-radius: 10px;
 }
+.exchange-modal__inner .tabs-triggers__item--active {
+  width: 220px;
+  height: 60px;
+  background: #cfdfff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+  position: relative;
+  transform: translateY(5px);
+}
 .exchange-modal__inner .tabs-content {
   width: 100%;
   height: 470px;
@@ -798,21 +808,61 @@ button {
   background: #cfdfff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding: 15px 0 55px 40px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog {
+  width: 100%;
+  max-width: 320px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-head-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-head-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #062748;
+  opacity: 0.7;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-head-arrow {
+  width: 10px;
+  height: 12px;
+  margin-left: auto;
+  margin-right: 15px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-list-item {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-bottom: 25px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-list-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-list-text {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #062748;
+  opacity: 0.7;
+}
+.exchange-modal__inner .tabs-content__item .exchange-modal__catalog-hr {
+  width: 100%;
+  border: 1px solid rgba(4, 59, 116, 0.4);
+  margin-bottom: 25px;
 }
 .exchange-modal__inner .tabs-content__item--active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.exchange-modal__inner .tabs-triggers__item--active {
-  width: 220px;
-  height: 60px;
-  background: #cfdfff;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  box-shadow: none;
-  position: relative;
-  transform: translateY(5px);
+  display: block;
 }
 
 @-webkit-keyframes animatefade {

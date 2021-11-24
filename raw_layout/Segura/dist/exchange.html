@@ -143,19 +143,87 @@
 
               <div class="exchange-modal__inner">
                 <div class="tabs-triggers">
-                  <a href="#tab-1" class="tabs-triggers__item">Исполнитель</a>
+                  <a href="#tab-1" class="tabs-triggers__item tabs-triggers__item--active">Исполнитель</a>
                   <a href="#tab-2" class="tabs-triggers__item">Заказчик</a>
                 </div>
                 <!-- /.tabs-triggers -->
 
                 <div class="tabs-content">
-                  <div id="tab-1" class="tabs-content__item">
+                  <div id="tab-1" class="tabs-content__item tabs-content__item--active">
                     <div class="exchange-modal__catalog">
+                      <div class="exchange-modal__catalog-head">
+                        <svg class="exchange-modal__catalog-head-icon">
+                          <use xlink:href="img/icons/sprite.svg#catalog"></use>
+                        </svg>
+                        <h3 class="exchange-modal__catalog-head-title">Каталог услуг</h3>
+                        <svg class="exchange-modal__catalog-head-arrow">
+                          <use xlink:href="img/icons/sprite.svg#arrow-list"></use>
+                        </svg>
+                      </div>
+                      <!-- /.exchange-modal__catalog-head -->
+                      <ul class="exchange-modal__catalog-list">
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#check-round"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Биржа</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#basket"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Мои задания</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#bag"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Вакансии</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#chat"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Чат</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
 
+                        <hr class="exchange-modal__catalog-hr">
+                        <!-- /.exchange-modal__catalog-hr -->
+
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#profile"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Профиль и настройки</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#help"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Помощь</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#exit"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Выход</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                      </ul>
+                      <!-- /.exchange-modal__catalog-list -->
                     </div>
                     <!-- /.exchange-modal__catalog -->
                   </div>
+                  <!-- /.tabs-content__item -->
+
                   <div id="tab-2" class="tabs-content__item">Content 2</div>
+                  <!-- /.tabs-content__item -->
                 </div>
                 <!-- /.tabs-content -->
 
