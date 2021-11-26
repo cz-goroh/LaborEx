@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     popupClose.forEach(function (item) {
       item.addEventListener('click', function () {
-        let popup = item.closest('.exchange-modal');
+        let popup = item.closest('.modal-open');
         popup.style.display = 'none';
       });
     });
 
     window.onclick = function (e) {
-      if (e.target.classList.contains('exchange-modal')) {
+      if (e.target.classList.contains('modal-open')) {
         e.target.style.display = 'none';
       }
     };
