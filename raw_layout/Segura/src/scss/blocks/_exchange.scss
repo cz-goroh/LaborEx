@@ -48,6 +48,27 @@
       margin: 30px auto 65px;
       width: 315px;
       height: 30px;
+      @media (max-width: 460px) {
+        display: none;
+      }
+    }
+
+    &__next-button {
+      display: none;
+      width: 196px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $science-blue;
+      background: $zircon;
+      box-shadow: -5px 5px 20px rgba(0, 79, 157, 0.15);
+      border-radius: 10px;
+      margin: 30px auto 65px;
+      @media (max-width: 460px) {
+        display: flex;
+      }
     }
   }
 }
