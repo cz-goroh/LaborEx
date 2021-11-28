@@ -58,6 +58,7 @@
       padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      cursor: pointer;
       &::before {
         position: absolute;
         content: '';
@@ -131,6 +132,7 @@
       padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      cursor: pointer;
       &::before {
         position: absolute;
         content: '';
@@ -181,6 +183,7 @@
       padding-left: 30px;
       font-size: 1.4rem;
       color: rgba(6, 39, 72, 0.7);
+      cursor: pointer;
       &::before {
         position: absolute;
         content: '';
@@ -212,6 +215,46 @@
         background-size: 10px 10px;
         background-position: center;
       }
+    }
+  }
+}
+
+// * Filters Modal ++++++++++++++++++++++++++++
+// * ++++++++++++++++++++++++++++++++++++++++++
+.exchange-filters-modal {
+  max-width: 680px;
+  height: auto;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 75px 40px 0;
+
+  & .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 25px;
+    transform: rotate(45deg);
+  }
+
+  &__inner {
+    margin-bottom: 50px;
+
+    & .filters__category,
+    & .budget__range-input {
+      background: $zircon;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 65px;
+    @media (max-width: 460px) {
+      flex-wrap: wrap;
+      margin-bottom: 25px;
     }
   }
 }

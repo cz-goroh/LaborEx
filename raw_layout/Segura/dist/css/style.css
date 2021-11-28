@@ -350,6 +350,7 @@ button {
   box-shadow: none;
   padding: 13px;
 }
+
 .exchange-main {
   width: 100%;
   display: flex;
@@ -2926,6 +2927,7 @@ button {
   padding-left: 30px;
   font-size: 1.4rem;
   color: rgba(6, 39, 72, 0.7);
+  cursor: pointer;
 }
 .budget__check label::before {
   position: absolute;
@@ -3003,6 +3005,7 @@ button {
   padding-left: 30px;
   font-size: 1.4rem;
   color: rgba(6, 39, 72, 0.7);
+  cursor: pointer;
 }
 .filter-offers__check label::before {
   position: absolute;
@@ -3052,6 +3055,7 @@ button {
   padding-left: 30px;
   font-size: 1.4rem;
   color: rgba(6, 39, 72, 0.7);
+  cursor: pointer;
 }
 .filter-tasks__check label::before {
   position: absolute;
@@ -3084,6 +3088,41 @@ button {
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: center;
+}
+
+.exchange-filters-modal {
+  max-width: 680px;
+  height: auto;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 75px 40px 0;
+}
+.exchange-filters-modal .close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 25px;
+  transform: rotate(45deg);
+}
+.exchange-filters-modal__inner {
+  margin-bottom: 50px;
+}
+.exchange-filters-modal__inner .filters__category, .exchange-filters-modal__inner .budget__range-input {
+  background: #f9faff;
+}
+.exchange-filters-modal__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 65px;
+}
+@media (max-width: 460px) {
+  .exchange-filters-modal__items {
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
 }
 
 .statics {
@@ -3155,7 +3194,7 @@ button {
 .task-card__label {
   position: absolute;
   top: 25px;
-  left: 380px;
+  left: 410px;
   width: 105px;
   height: 38px;
   background: #cfdfff;
