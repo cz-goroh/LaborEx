@@ -102,7 +102,7 @@
           </svg>
         </div>
         <!-- /.burger__icon -->
-        <div class="exchange-modal" id="popup1">
+        <div class="exchange-modal modal-open" id="popup1">
           <div class="exchange-modal__content">
             <div class="exchange-modal__header">
               <a class="menu__logo" href="index.html">
@@ -140,12 +140,253 @@
                 </a>
               </div>
               <!-- /.exchange-modal__up -->
+
               <div class="exchange-modal__inner">
+                <div class="tabs-triggers">
+                  <a href="#tab-1" class="tabs-triggers__item tabs-triggers__item--active">Исполнитель</a>
+                  <a href="#tab-2" class="tabs-triggers__item">Заказчик</a>
+                </div>
+                <!-- /.tabs-triggers -->
+
+                <div class="tabs-content">
+                  <div id="tab-1" class="tabs-content__item tabs-content__item--active">
+                    <div class="exchange-modal__catalog">
+                      <div class="exchange-modal__catalog-head open-popup" data-popup="popup2">
+                        <svg class="exchange-modal__catalog-head-icon">
+                          <use xlink:href="img/icons/sprite.svg#catalog"></use>
+                        </svg>
+                        <h3 class="exchange-modal__catalog-head-title">Каталог услуг</h3>
+                        <svg class="exchange-modal__catalog-head-arrow">
+                          <use xlink:href="img/icons/sprite.svg#arrow-list"></use>
+                        </svg>
+                      </div>
+                      <!-- /.exchange-modal__catalog-head -->
+
+
+                      <!-- Services Modal -->
+                      <div class="services-modal modal-open" id="popup2">
+                        <div class="services-modal__content">
+
+                          <div class="close">
+                            <img src="img/cross.svg" alt="cross">
+                          </div>
+                          <!-- /.close -->
+
+                          <ul class="services-modal__list">
+                            <li class="services-modal__item">
+                              <span>Дизайн</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Разработка и IT</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Тексты и переводы</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>SEO и трафик</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Соцсети и реклама</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Аудио, видео, съемка</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Бизнес и жизнь</span>
+                            </li>
+                          </ul>
+                          <!-- /.services-modal__list -->
+                        </div>
+                        <!-- /.services-modal__content -->
+                      </div>
+                      <!-- /.services-modal -->
+
+
+                      <!-- Catalog List -->
+                      <ul class="exchange-modal__catalog-list">
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#check-round"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Биржа</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#basket"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Мои задания</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#bag"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Вакансии</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#chat"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Чат</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+
+                        <hr class="exchange-modal__catalog-hr">
+                        <!-- /.exchange-modal__catalog-hr -->
+
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#profile"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Профиль и настройки</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#help"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Помощь</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#exit"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Выход</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                      </ul>
+                      <!-- /.exchange-modal__catalog-list -->
+                    </div>
+                    <!-- /.exchange-modal__catalog -->
+                  </div>
+                  <!-- /.tabs-content__item -->
+
+                  <div id="tab-2" class="tabs-content__item">
+                    <div class="exchange-modal__catalog">
+                      <div class="exchange-modal__catalog-head open-popup" data-popup="popup3">
+                        <svg class="exchange-modal__catalog-head-icon">
+                          <use xlink:href="img/icons/sprite.svg#catalog"></use>
+                        </svg>
+                        <h3 class="exchange-modal__catalog-head-title">Каталог услуг</h3>
+                        <svg class="exchange-modal__catalog-head-arrow">
+                          <use xlink:href="img/icons/sprite.svg#arrow-list"></use>
+                        </svg>
+                      </div>
+                      <!-- /.exchange-modal__catalog-head -->
+
+
+                      <!-- Services Modal -->
+                      <div class="services-modal modal-open" id="popup3">
+                        <div class="services-modal__content">
+
+                          <div class="close">
+                            <img src="img/cross.svg" alt="cross">
+                          </div>
+                          <!-- /.close -->
+
+                          <ul class="services-modal__list">
+                            <li class="services-modal__item">
+                              <span>Дизайн</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Разработка и IT</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Тексты и переводы</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>SEO и трафик</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Соцсети и реклама</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Аудио, видео, съемка</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Бизнес и жизнь</span>
+                            </li>
+                          </ul>
+                          <!-- /.services-modal__list -->
+                        </div>
+                        <!-- /.services-modal__content -->
+                      </div>
+                      <!-- /.services-modal -->
+
+
+                      <!-- Catalog List -->
+                      <ul class="exchange-modal__catalog-list">
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#check-round"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Биржа</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#basket"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Мои задания</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#bag"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Вакансии</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#chat"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Чат</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+
+                        <hr class="exchange-modal__catalog-hr">
+                        <!-- /.exchange-modal__catalog-hr -->
+
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#profile"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Профиль и настройки</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#help"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Помощь</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="img/icons/sprite.svg#exit"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Выход</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                      </ul>
+                      <!-- /.exchange-modal__catalog-list -->
+                    </div>
+                    <!-- /.exchange-modal__catalog -->
+                  </div>
+                  <!-- /.tabs-content__item -->
+                </div>
+                <!-- /.tabs-content -->
 
               </div>
               <!-- /.exchange-modal__inner -->
             </div>
+            <!-- /.exchange-modal__body -->
           </div>
+          <!-- /.exchange-modal__content -->
         </div>
         <!-- /.exchange-modal -->
       </div>
@@ -197,6 +438,7 @@
 		<!-- /.filters__title -->
 	</div>
 	<!-- /.filters__head -->
+
 	<div class="filters__category">
 		<p>Все рубрики</p>
 		<img src="img/shevron.svg" alt="shevron" class="filters__category-img">
@@ -264,7 +506,7 @@
 	<div class="filter-tasks__inputs">
 		<div class="filter-tasks__check">
 			<input type="checkbox" name="" id="tasks1">
-			<label for="tasks1">Онлайн-заданий</label>
+			<label for="tasks1">Онлайн-задания</label>
 		</div>
 		<div class="filter-tasks__check">
 			<input type="checkbox" name="" id="tasks2">
@@ -302,7 +544,139 @@
 
         </aside>
         <!-- /.exchange-filters -->
+
+
         <div class="exchange-cards">
+
+          <div class="exchange-filters__button open-popup" data-popup="exchange">
+            <img src="img/filter.svg" alt="filter" class="filters__img">
+            <h3 class="filters__title">Фильтры</h3>
+            <!-- /.filters__title -->
+          </div>
+          <!-- /.exchange-filters__button -->
+
+          <!-- Filters Modal -->
+          <div class="exchange-filters-modal modal modal-open" id="exchange">
+            <div class="close">
+              <img src="img/cross.svg" alt="cross">
+            </div>
+            <!-- /.close -->
+
+            <div class="exchange-filters-modal__inner">
+              <div class="exchange-filters-modal__items">
+                <div class="exchange-filters-modal__item">
+                  <div class="filters__category">
+                    <p>Все рубрики</p>
+                    <img src="img/shevron.svg" alt="shevron" class="filters__category-img">
+                  </div>
+                  <!-- /.filters__category -->
+
+                  <h3 class="filters__title budget">Бюджет</h3>
+                  <!-- /.filters__title -->
+                  <div class="budget__inputs">
+                    <div class="budget__check">
+                      <input type="checkbox" name="" id="budget1-m">
+                      <label for="budget1-m">До 1 000 ₽</label>
+                    </div>
+                    <div class="budget__check">
+                      <input type="checkbox" name="" id="budget2-m">
+                      <label for="budget2-m"> 1 000 ₽ - 3 000 ₽</label>
+                    </div>
+                    <div class="budget__check">
+                      <input type="checkbox" name="" id="budget3-m">
+                      <label for="budget3-m">3 000 ₽ - 10 000 ₽</label>
+                    </div>
+                    <div class="budget__check">
+                      <input type="checkbox" name="" id="budget4-m">
+                      <label for="budget4-m">10 000 ₽ - 30 000 ₽</label>
+                    </div>
+                    <div class="budget__check">
+                      <input type="checkbox" name="" id="budget5-m">
+                      <label for="budget5-m">От 30 000 ₽</label>
+                    </div>
+                    <div class="budget__range">
+                      <input type="text" name="" class="budget__range-input" placeholder="От руб.">
+                      <input type="text" name="" class="budget__range-input" placeholder="До руб.">
+                    </div>
+                  </div>
+                  <!-- /.budget__inputs -->
+                </div>
+                <!-- /.exchange-filters-modal__item -->
+
+                <div class="exchange-filters-modal__item">
+                  <h3 class="filters__title filter-offers">Количество предложений</h3>
+                  <!-- /.filters__title -->
+                  <div class="filter-offers__inputs">
+                    <div class="filter-offers__check">
+                      <input type="checkbox" name="" id="offers1-m">
+                      <label for="offers1-m">До 5 (117)</label>
+                    </div>
+                    <div class="filter-offers__check">
+                      <input type="checkbox" name="" id="offers2-m">
+                      <label for="offers2-m">От 5 до 10 (46)</label>
+                    </div>
+                    <div class="filter-offers__check">
+                      <input type="checkbox" name="" id="offers3-m">
+                      <label for="offers3-m">От 10 до 15 (24)</label>
+                    </div>
+                    <div class="filter-offers__check">
+                      <input type="checkbox" name="" id="offers4-m">
+                      <label for="offers4-m">От 15 до 20 (17)</label>
+                    </div>
+                    <div class="filter-offers__check">
+                      <input type="checkbox" name="" id="offers5-m">
+                      <label for="offers5-m">От 20 (24)</label>
+                    </div>
+                  </div>
+                  <!-- /.filter-offers__inputs -->
+
+                  <h3 class="filters__title filter-tasks">Тип заданий</h3>
+                  <!-- /.filters__title -->
+                  <div class="filter-tasks__inputs">
+                    <div class="filter-tasks__check">
+                      <input type="checkbox" name="" id="tasks1-m">
+                      <label for="tasks1-m">Онлайн-задания</label>
+                    </div>
+                    <div class="filter-tasks__check">
+                      <input type="checkbox" name="" id="tasks2-m">
+                      <label for="tasks2-m">Оффлайн-задания</label>
+                    </div>
+                  </div>
+                  <!-- /.filter-tasks__inputs -->
+
+                </div>
+                <!-- /.exchange-filters-modal__item -->
+              </div>
+              <!-- /.exchange-filters-modal__items -->
+              <div class="statics card">
+	<h3 class="statics__title">Статистика биржи за&nbsp;месяц</h3>
+	<!-- /.statics__title -->
+	<ul class="statics__list">
+		<li class="statics__item">
+			<p class="statics__text">Проектов</p>
+			<span class="statics__result">16 182</span>
+		</li>
+		<!-- /.statics__item -->
+		<li class="statics__item">
+			<p class="statics__text">На сумму (₽)</p>
+			<span class="statics__result">167 083 625</span>
+		</li>
+		<!-- /.statics__item -->
+		<li class="statics__item">
+			<p class="statics__text">Заказов</p>
+			<span class="statics__result">6 514</span>
+		</li>
+		<!-- /.statics__item -->
+	</ul>
+	<!-- /.statics__list -->
+</div>
+<!-- /.statics card -->
+
+            </div>
+            <!-- /.exchange-filters-modal__inner -->
+          </div>
+          <!-- /.exchange-filters-modal -->
+
           <div class="task-card card">
 	<div class="task-card__description">
 		<h3 class="task-card__title">Сделать подарочный сертификат</h3>
@@ -722,6 +1096,9 @@
             </div>
           </div>
           <!-- /.exchange-cards__pagination -->
+
+          <button class="exchange-cards__next-button btn">Больше</button>
+          <!-- /.exchange-cards__next-button -->
         </div>
         <!-- /.exchange-cards -->
       </main>
