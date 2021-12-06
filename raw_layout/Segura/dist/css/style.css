@@ -3056,22 +3056,23 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-.filters__category-check input:checked + label::before {
+.filters__category-check input[checked=true] + label::before {
   position: absolute;
   content: "";
   display: block;
   left: 0;
-  top: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   background-image: url("../img/checked.svg");
   background-repeat: no-repeat;
-  background-size: 15px 16px;
+  background-size: 10px 10px;
   background-position: center;
 }
-@media (max-width: 460px) {
-  .filters__category-check input:checked + label::before {
-    background-size: 8px 9px;
-    top: 9px;
-  }
+.filters__category-check input[checked=false] + label::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background: #f9faff;
 }
 .filters__category-name {
   display: flex;
@@ -3172,7 +3173,7 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-.budget__check input:checked + label::before {
+.budget__check input[checked=true] + label::before {
   position: absolute;
   content: "";
   display: block;
@@ -3183,6 +3184,11 @@ button {
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: center;
+}
+.budget__check input[checked=false] + label::before {
+  position: absolute;
+  content: "";
+  background: #f9faff;
 }
 .budget__range {
   width: 100%;
@@ -3250,7 +3256,7 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-.filter-offers__check input:checked + label::before {
+.filter-offers__check input[checked=true] + label::before {
   position: absolute;
   content: "";
   display: block;
@@ -3261,6 +3267,11 @@ button {
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: center;
+}
+.filter-offers__check input[checked=false] + label::before {
+  position: absolute;
+  content: "";
+  background: #f9faff;
 }
 
 .filter-tasks {
@@ -3300,7 +3311,7 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
-.filter-tasks__check input:checked + label::before {
+.filter-tasks__check input[checked=true] + label::before {
   position: absolute;
   content: "";
   display: block;
@@ -3311,6 +3322,11 @@ button {
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: center;
+}
+.filter-tasks__check input[checked=false] + label::before {
+  position: absolute;
+  content: "";
+  background: #f9faff;
 }
 
 .exchange-filters-modal {

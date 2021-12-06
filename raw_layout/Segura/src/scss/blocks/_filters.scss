@@ -164,20 +164,23 @@
       & input {
         position: absolute;
         appearance: none;
-        &:checked + label::before {
+        &[checked='true'] + label::before {
           position: absolute;
           content: '';
           display: block;
           left: 0;
-          top: 5px;
+          top: 50%;
+          transform: translateY(-50%);
           background-image: url('../img/checked.svg');
           background-repeat: no-repeat;
-          background-size: 15px 16px;
+          background-size: 10px 10px;
           background-position: center;
-          @media (max-width: 460px) {
-            background-size: 8px 9px;
-            top: 9px;
-          }
+        }
+        &[checked='false'] + label::before {
+          position: absolute;
+          content: '';
+          display: block;
+          background: $zircon;
         }
       }
     }
@@ -286,7 +289,7 @@
     & input {
       position: absolute;
       appearance: none;
-      &:checked + label::before {
+      &[checked='true'] + label::before {
         position: absolute;
         content: '';
         display: block;
@@ -297,6 +300,11 @@
         background-repeat: no-repeat;
         background-size: 10px 10px;
         background-position: center;
+      }
+      &[checked='false'] + label::before {
+        position: absolute;
+        content: '';
+        background: $zircon;
       }
     }
   }
@@ -360,7 +368,7 @@
     & input {
       position: absolute;
       appearance: none;
-      &:checked + label::before {
+      &[checked='true'] + label::before {
         position: absolute;
         content: '';
         display: block;
@@ -371,6 +379,11 @@
         background-repeat: no-repeat;
         background-size: 10px 10px;
         background-position: center;
+      }
+      &[checked='false'] + label::before {
+        position: absolute;
+        content: '';
+        background: $zircon;
       }
     }
   }
@@ -411,7 +424,7 @@
     & input {
       position: absolute;
       appearance: none;
-      &:checked + label::before {
+      &[checked='true'] + label::before {
         position: absolute;
         content: '';
         display: block;
@@ -422,6 +435,11 @@
         background-repeat: no-repeat;
         background-size: 10px 10px;
         background-position: center;
+      }
+      &[checked='false'] + label::before {
+        position: absolute;
+        content: '';
+        background: $zircon;
       }
     }
   }
