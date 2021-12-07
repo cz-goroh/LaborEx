@@ -16,10 +16,6 @@
     padding: 17px 13px;
   }
 
-  &__description {
-    // position: relative;
-  }
-
   &__title {
     font-family: 'Helvetica', sans-serif;
     font-size: 2rem;
@@ -36,8 +32,7 @@
     position: absolute;
     top: 25px;
     left: 410px;
-    width: 105px;
-    height: 38px;
+    padding: 9px 23px 8px 23px;
     background: $periwincle;
     border-radius: 10px;
     display: flex;

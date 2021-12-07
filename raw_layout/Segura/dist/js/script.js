@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   openCloseBurgerModal();
 
+  // * Added attribute "checked" ==================================
+  // * ============================================================
+  function addChecked() {
+    const labels = document.querySelectorAll('label');
+
+    labels.forEach(function (box) {
+      box.addEventListener('click', function () {
+        const el = this.previousElementSibling;
+
+        if (!el.checked) {
+          el.setAttribute('checked', true);
+        } else {
+          el.setAttribute('checked', false);
+        }
+      });
+    });
+  }
+  addChecked();
+
   // * Burger-modal Tabs ==========================================
   // * ============================================================
   function burgerModalTabs() {
@@ -107,6 +126,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   openCloseModals();
+
+  // * Dropdown ============================================
+  // * =====================================================
+  function openDropdown() {
+    const dropdown = document.querySelectorAll('.dropdown');
+
+    for (item of dropdown) {
+      item.addEventListener('click', function () {
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          for (el of dropdown) {
+            el.classList.remove('active');
+          }
+          this.classList.add('active');
+        }
+      });
+    }
+  }
+  openDropdown();
+  //
 
   // * Open-Close burger list ==============================
   // * =======================================================
