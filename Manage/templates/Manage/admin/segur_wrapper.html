@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+{%load static%}
+<head>
+  <meta charset="UTF-8">
+<!-- Useful meta tags -->
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="icon" href="{% static  'Manage/admin/segur/img/favicon.ico' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static  'Manage/admin/segur/img/favicon.ico' %}" type="image/x-icon">
+
+<link rel="stylesheet" href="{% static  'Manage/admin/segur/css/vendor/normalize.css' %}">
+<link rel="stylesheet" href="{% static  'Manage/admin/segur/css/style.min.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <title>Proofex</title>
+</head>
+
+
+<!-- BASE CONTENT -->
+
+<body>
+
+  <div class="body-wrapper">
+    <!--	HEADER -->
+    <header class="header-exchange">
+  <div class="container">
+    <div class="header-exchange__inner">
+      <div class="header-exchange__menu menu">
+        <a class="menu__logo" href="index.html">
+          <img src="{% static  'Manage/admin/segur/img/logo.svg' %}" alt="logo">
+        </a>
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__item-link active" href="{%url 'Order:order_list'%}">
+              Биржа
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Мои задания
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Вакансии
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#">
+              Чат
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.header-exchange__menu -->
+
+      <div class="header__info header-info">
+        <div class="header-info__box info-box">
+          <div class="info-box__content">
+            <div class="info-box__notifications">
+              <a class="info-box__notifications-link" href="#">
+                <img src="{% static  'Manage/admin/segur/img/bell.svg' %}" alt="bell">
+              </a>
+              <p class="info-box__notifications-value">1</p>
+            </div>
+            <a class="info-box__wrap" href="#">
+              <div class="info-box__money">
+                <div class="info-box__money-price">
+                  750
+                </div>
+                <svg class="info-box__money-img">
+                  <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#price"></use>
+                </svg>
+              </div>
+              <div class="info-box__price">
+                <div class="info-box__price-value">
+                  2100,00
+                </div>
+                <div class="info-box__price-text">
+                  в буфере
+                </div>
+              </div>
+            </a>
+          </div>
+          <a class="info-box__img" href="#">
+            <img src="{% static  'Manage/admin/segur/img/avatar.jpg' %}" alt="avatar">
+          </a>
+        </div>
+        <a class="header-info__btn btn btn--java" href="#">
+          Дать задание
+        </a>
+      </div>
+      <!-- /.header__info -->
+
+      <div class="exchange-burger">
+        <div class="exchange-burger__icon open-popup" data-popup="popup1">
+          <svg class=" burger__svg">
+            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#burger"></use>
+          </svg>
+        </div>
+        <!-- /.burger__icon -->
+        <div class="exchange-modal modal-open" id="popup1">
+          <div class="exchange-modal__content">
+            <div class="exchange-modal__header">
+              <a class="menu__logo" href="index.html">
+                <img src="{% static  'Manage/admin/segur/img/logo.svg' %}" alt="logo">
+              </a>
+              <div class="close">
+                <img src="{% static  'Manage/admin/segur/img/cross.svg' %}" alt="cross">
+              </div>
+            </div>
+            <div class="exchange-modal__body">
+              <div class="exchange-modal__up">
+                <div class="exchange-modal__person">
+                  <a class="info-box__img" href="#">
+                    <img src="{% static  'Manage/admin/segur/img/avatar.jpg' %}" alt="avatar">
+                  </a>
+                  <p>Лиля Переводова</p>
+                </div>
+                <a class="info-box__wrap" href="#">
+                  <div class="info-box__money">
+                    <div class="info-box__money-price">
+                      750
+                    </div>
+                    <svg class="info-box__money-img">
+                      <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#price"></use>
+                    </svg>
+                  </div>
+                  <div class="info-box__price">
+                    <div class="info-box__price-value">
+                      2100,00
+                    </div>
+                    <div class="info-box__price-text">
+                      в буфере
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- /.exchange-modal__up -->
+
+              <div class="exchange-modal__inner">
+                <div class="tabs-triggers">
+                  <a href="#tab-1" class="tabs-triggers__item tabs-triggers__item--active">Исполнитель</a>
+                  <a href="#tab-2" class="tabs-triggers__item">Заказчик</a>
+                </div>
+                <!-- /.tabs-triggers -->
+
+                <div class="tabs-content">
+                  <div id="tab-1" class="tabs-content__item tabs-content__item--active">
+                    <div class="exchange-modal__catalog">
+                      <div class="exchange-modal__catalog-head open-popup" data-popup="popup2">
+                        <svg class="exchange-modal__catalog-head-icon">
+                          <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#catalog"></use>
+                        </svg>
+                        <h3 class="exchange-modal__catalog-head-title">Каталог услуг</h3>
+                        <svg class="exchange-modal__catalog-head-arrow">
+                          <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#arrow-list"></use>
+                        </svg>
+                      </div>
+                      <!-- /.exchange-modal__catalog-head -->
+
+
+                      <!-- Services Modal -->
+                      <div class="services-modal modal-open" id="popup2">
+                        <div class="services-modal__content">
+
+                          <div class="close">
+                            <img src="{% static  'Manage/admin/segur/img/cross.svg' %}" alt="cross">
+                          </div>
+                          <!-- /.close -->
+
+                          <ul class="services-modal__list">
+                            <li class="services-modal__item">
+                              <span>Дизайн</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Разработка и IT</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Тексты и переводы</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>SEO и трафик</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Соцсети и реклама</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Аудио, видео, съемка</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Бизнес и жизнь</span>
+                            </li>
+                          </ul>
+                          <!-- /.services-modal__list -->
+                        </div>
+                        <!-- /.services-modal__content -->
+                      </div>
+                      <!-- /.services-modal -->
+
+
+                      <!-- Catalog List -->
+                      <ul class="exchange-modal__catalog-list">
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#check-round"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Биржа</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#basket"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Мои задания</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#bag"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Вакансии</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#chat"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Чат</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+
+                        <hr class="exchange-modal__catalog-hr">
+                        <!-- /.exchange-modal__catalog-hr -->
+
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#profile"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Профиль и настройки</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#help"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Помощь</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#exit"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Выход</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                      </ul>
+                      <!-- /.exchange-modal__catalog-list -->
+                    </div>
+                    <!-- /.exchange-modal__catalog -->
+                  </div>
+                  <!-- /.tabs-content__item -->
+
+                  <div id="tab-2" class="tabs-content__item">
+                    <div class="exchange-modal__catalog">
+                      <div class="exchange-modal__catalog-head open-popup" data-popup="popup3">
+                        <svg class="exchange-modal__catalog-head-icon">
+                          <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#catalog"></use>
+                        </svg>
+                        <h3 class="exchange-modal__catalog-head-title">Каталог услуг</h3>
+                        <svg class="exchange-modal__catalog-head-arrow">
+                          <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#arrow-list"></use>
+                        </svg>
+                      </div>
+                      <!-- /.exchange-modal__catalog-head -->
+
+
+                      <!-- Services Modal -->
+                      <div class="services-modal modal-open" id="popup3">
+                        <div class="services-modal__content">
+
+                          <div class="close">
+                            <img src="{% static  'Manage/admin/segur/img/cross.svg' %}" alt="cross">
+                          </div>
+                          <!-- /.close -->
+
+                          <ul class="services-modal__list">
+                            <li class="services-modal__item">
+                              <span>Дизайн</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Разработка и IT</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Тексты и переводы</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>SEO и трафик</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Соцсети и реклама</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Аудио, видео, съемка</span>
+                            </li>
+                            <li class="services-modal__item">
+                              <span>Бизнес и жизнь</span>
+                            </li>
+                          </ul>
+                          <!-- /.services-modal__list -->
+                        </div>
+                        <!-- /.services-modal__content -->
+                      </div>
+                      <!-- /.services-modal -->
+
+
+                      <!-- Catalog List -->
+                      <ul class="exchange-modal__catalog-list">
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#check-round"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Биржа</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#basket"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Мои задания</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#bag"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Вакансии</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#chat"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Чат</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+
+                        <hr class="exchange-modal__catalog-hr">
+                        <!-- /.exchange-modal__catalog-hr -->
+
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#profile"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Профиль и настройки</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#help"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Помощь</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                        <li class="exchange-modal__catalog-list-item">
+                          <svg class="exchange-modal__catalog-list-icon">
+                            <use xlink:href="{% static  'Manage/admin/segur/img/icons/sprite.svg' %}#exit"></use>
+                          </svg>
+                          <p class="exchange-modal__catalog-list-text">Выход</p>
+                        </li>
+                        <!-- /.exchange-modal__catalog-list-item -->
+                      </ul>
+                      <!-- /.exchange-modal__catalog-list -->
+                    </div>
+                    <!-- /.exchange-modal__catalog -->
+                  </div>
+                  <!-- /.tabs-content__item -->
+                </div>
+                <!-- /.tabs-content -->
+
+              </div>
+              <!-- /.exchange-modal__inner -->
+            </div>
+            <!-- /.exchange-modal__body -->
+          </div>
+          <!-- /.exchange-modal__content -->
+        </div>
+        <!-- /.exchange-modal -->
+      </div>
+      <!-- /.exchange-burger -->
+    </div>
+    <!-- /.header-exchange__inner -->
+  </div>
+  <!-- /.container -->
+</header>
+
+<div class="container">
+  <div class="exchange-header header__down">
+    <ul class="menu">
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Дизайн</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Разработка и IT</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Тексты и переводы</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">SEO и трафик</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Соцсети и реклама</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Аудио, видео, съёмка</a>
+      </li>
+      <li class="menu__item">
+        <a href="" class="menu__item-link">Бизнес и жизнь</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /.header__down -->
+</div>
+<!-- /.container -->
+
+{% block content%} {%endblock%}
+
+</div>
+
+
+
+<script src="{% static  'Manage/admin/segur/js/script.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        try{
+            var sock = new WebSocket('ws://185.144.29.182:8080/ws/chat/');
+            //     var sock = new WebSocket('ws://' + window.location.host +':8085/ws/chat/');
+        }
+        catch(err){
+            var sock = new WebSocket('wss://' + window.location.host +'/ws/chat/');
+        }
+        sock.onmessage = function(mes){
+            mes_data = jQuery.parseJSON(mes.data);
+            console.log(mes_data);
+            if (mes_data.new_order) {
+                $(mes_data.rendered).prependTo($('#cards_list'));
+            }
+        }
+        sock.onopen = function (event) {
+            sock.send(JSON.stringify( { "user_from": {{request.user.id}}, }));
+            setInterval(function(){ sock.send(JSON.stringify(false)); }, 20000);
+        }
+        sock.onclose = function (event) {
+              console.log(event);
+              if(event.wasClean){
+                  console.log('Clean connection end');
+              } else {
+                  console.log('Connection broken');
+              }
+              {%if request.user.is_authenticated%}
+              // window.location.assign(window.location.href);
+              {%endif%}
+          };
+          sock.onerror = function (error) {
+              console.log(error);
+          };
+        $('.filter_params').on('change', function(){
+            params = {}
+            $('.checkbox_filter').each(function(){
+                params[this.id] = $(this).is(':checked');
+            });
+            $('.number_filter').each(function(){
+                params[this.id] = $(this).val();
+            });
+
+            console.log(params);
+
+        });
+    });
+</script>
+</body>
+
+</html>
