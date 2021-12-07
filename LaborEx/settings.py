@@ -71,8 +71,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'LaborEx.urls'
@@ -184,13 +184,13 @@ REDIS_PORT = 6379
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
 CELERY_BROKER_TRANSPORT = 'redis'
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        },
-        "KEY_PREFIX": "cach_labor"
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://127.0.0.1:6379/1",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient"
+#         },
+#         "KEY_PREFIX": "cach_labor"
+#     }
+# }

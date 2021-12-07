@@ -1,11 +1,16 @@
 from django.shortcuts import render
-import logging
+import logging, asyncio, websockets, json
 from django.views.generic import TemplateView, FormView, ListView
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.core.cache import cache
+from django.template.loader import render_to_string
 from .models import *
 from .forms import *
 
+
+async def send_to_exchange_list(order):
+    async with websockets.connect("ws://localhost:8080/ws/chat/") as websocket:
+        await websocket.send(json.dumps(order))
 
 class OfferListView(ListView):
     model = Offer
@@ -34,12 +39,41 @@ class NewOrderFormView(FormView):
         form.instance.client = self.request.user
         self.object = form.save(commit=True)
         self.object.save()
+
+        rendered_new_order_block = render_to_string(
+            'Order/order_card_widget.html',
+            {'order': self.object}
+            )
+
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(asyncio.gather(
+            send_to_exchange_list({
+                'new_order': self.object.id,
+                'status': self.object.status,
+                'name': self.object.name,
+                'descr': self.object.descr,
+                'rubric': self.object.rubric.name,
+                'price': int(round(self.object.price)),
+                # 'user_from': self.object.client.id,
+                'rendered': rendered_new_order_block,
+                })
+        ))
+        loop.close()
         return super().form_valid(form)
 
 
+def ajax_filter_exchange(request):
+    q = {}
+
+    return render(request, 'Order/order_list.html', q)
+
+
 class OrderList(ListView):
-    template_name = 'Order/order_list.html'
+    """Биржа проектов"""
+    template_name = 'Order/exchange.html'
     model = Order
+    queryset = Order.objects.filter(status='new').order_by('-id')
 
 
 class NewOrderSuccesView(TemplateView):

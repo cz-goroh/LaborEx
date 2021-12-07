@@ -10,6 +10,10 @@ logging.basicConfig(filename="task_book.log", level=logging.INFO)
 
 class MixView():
 
+    def new_order_block_render(order_dict):
+        return """
+
+        """
     def get_m(self, model_name):
         model_obj = apps.get_model(model_name)
         return model_obj
@@ -45,34 +49,40 @@ class WSch(web.View, MixView):
 
             mes_dict = json.loads(msg.data)
             if not mes_dict:
-                print(mes_dict)
+                # print(mes_dict)
                 await ws.send_json(True)
                 # print('ping')
-            elif mes_dict['text'] or mes_dict['file']:
-                mes = await self.new_mes(
-                    mes_dict['text'],
-                    mes_dict['user_from'],
-                    mes_dict['user_to'],
-                    mes_dict['file'],
-                    mes_dict['filename']
-                    # None # сейчас файл не передаём
-                )
-                await self.broadcast_to_once_peer(mes)
+            else:
+                print(self.request.app.wslist)
+                if 'new_order' in mes_dict:
+                    await self.broadcast_new_order(mes_dict)
+                elif ('text' in mes_dict or 'file' in mes_dict) and (mes_dict['text'] or mes_dict['file']):
+                    mes = await self.new_mes(
+                        mes_dict['text'],
+                        mes_dict['user_from'],
+                        mes_dict['user_to'],
+                        mes_dict['file'],
+                        mes_dict['filename']
+                        # None # сейчас файл не передаём
+                    )
+                    await self.broadcast_to_once_peer(mes)
                 # if mes_dict['user_from'] not in self.request.app.wslist:
-                self.request.app.wslist[mes_dict['user_from']] = ws
+                if 'user_from' in mes_dict:
+                    self.request.app.wslist[mes_dict['user_from']] = ws
+
+    async def broadcast_new_order(self, mes):
+        for user_id,peer in self.request.app.wslist.items():
+            await peer.send_json(mes)
 
     async def broadcast_to_once_peer(self, mes):
         """# TODO: реализовать историю с прочитанными/непрочитанными сообщениями и с
         уведомлением о непрочитанных сообщениях при подключении пира"""
-        # for us, peer in self.request.app.wslist[mes]
-        # print(mes)
         if mes.user_to.id in self.request.app.wslist:
             peer = self.request.app.wslist[mes.user_to.id]
             avatar = None
             text = mes.text
             if mes.file:
                 text = f'{mes.text} приложено: <a href="{mes.file.url}">{mes.file.url}</a>'
-                print(text)
             try:
                 await peer.send_json({
                     'text': text,
@@ -81,7 +91,6 @@ class WSch(web.View, MixView):
                     'avatar': avatar
                 })
             except Exception as e:
-                print(e)
                 await peer.close()
                 self.request.app.wslist.pop(mes.user_from.id)
 

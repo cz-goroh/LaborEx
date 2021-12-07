@@ -45,6 +45,8 @@ class Order(models.Model):
     current_stage = models.ForeignKey(Stage, on_delete=models.SET_NULL,
                                       null=True, related_name='curr_stage')
 
+    def __str__(self):
+        return self.name
 
 class Offer(models.Model):
     """Предложение исполнителя на заказ"""
