@@ -14,7 +14,7 @@
 <link rel="shortcut icon" href="{% static  'Manage/admin/segur/img/favicon.ico' %}" type="image/x-icon">
 
 <link rel="stylesheet" href="{% static  'Manage/admin/segur/css/vendor/normalize.css' %}">
-<link rel="stylesheet" href="{% static  'Manage/admin/segur/css/style.min.css' %}">
+<link rel="stylesheet" href="{% static  'Manage/admin/segur/css/style.css' %}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -439,6 +439,16 @@
 <script src="{% static  'Manage/admin/segur/js/script.js' %}"></script>
 <script>
     $(document).ready(function(){
+        $('.checkbox_label').click(function(){
+            checkb = $(this).prev();
+            console.log(checkb);
+            if (checkb.is(':checked')){
+                checkb.prop('checked', false);
+            } else {
+                checkb.prop('checked', true);
+            }
+            // $(this).is(':checked');
+        });
         try{
             var sock = new WebSocket('ws://185.144.29.182:8080/ws/chat/');
             //     var sock = new WebSocket('ws://' + window.location.host +':8085/ws/chat/');
