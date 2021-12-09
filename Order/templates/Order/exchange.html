@@ -36,25 +36,26 @@
               <!-- /.filters__title -->
               <div class="budget__inputs">
                 <div class="budget__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget1-m">
-                  <label class="checkbox_label"  for="budget1-m">До 1 000 ₽</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget_0_1000_-m">
+                  <label class="checkbox_label"  for="budget_0_1000_-m">До 1 000 ₽</label>
                 </div>
                 <div class="budget__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget2-m">
-                  <label class="checkbox_label"  for="budget2-m"> 1 000 ₽ - 3 000 ₽</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget_1000_3000_-m">
+                  <label class="checkbox_label"  for="budget_1000_3000_-m"> 1 000 ₽ - 3 000 ₽</label>
                 </div>
                 <div class="budget__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget3-m">
-                  <label class="checkbox_label"  for="budget3-m">3 000 ₽ - 10 000 ₽</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget_3000_10000_-m">
+                  <label class="checkbox_label"  for="budget_3000_10000_-m">3 000 ₽ - 10 000 ₽</label>
                 </div>
                 <div class="budget__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget4-m">
-                  <label class="checkbox_label"  for="budget4-m">10 000 ₽ - 30 000 ₽</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget_10000_30000_-m">
+                  <label class="checkbox_label"  for="budget_10000_30000_-m">10 000 ₽ - 30 000 ₽</label>
                 </div>
                 <div class="budget__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget5-m">
-                  <label class="checkbox_label"  for="budget5-m">От 30 000 ₽</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="budget_30000_10000000000000_-m">
+                  <label class="checkbox_label"  for="budget_30000_10000000000000_-m">От 30 000 ₽</label>
                 </div>
+
                 <div class="budget__range">
                   <input id="price_from-m" type="text" name="" class="budget__range-input number_filter filter_params" placeholder="От руб.">
                   <input id="price_to-m" type="text" name="" class="budget__range-input number_filter filter_params" placeholder="До руб.">
@@ -95,12 +96,12 @@
               <!-- /.filters__title -->
               <div class="filter-tasks__inputs">
                 <div class="filter-tasks__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="tasks1-m">
-                  <label class="checkbox_label"  for="tasks1-m">Онлайн-задания</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="online-m">
+                  <label class="checkbox_label"  for="online-m">Онлайн-задания</label>
                 </div>
                 <div class="filter-tasks__check">
-                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="tasks2-m">
-                  <label class="checkbox_label"  for="tasks2-m">Оффлайн-задания</label>
+                  <input class="filter_params checkbox_filter" type="checkbox" name="" id="offline-m">
+                  <label class="checkbox_label"  for="offline-m">Оффлайн-задания</label>
                 </div>
               </div>
               <!-- /.filter-tasks__inputs -->
@@ -137,8 +138,9 @@
         <!-- /.exchange-filters-modal__inner -->
       </div>
       <!-- /.exchange-filters-modal -->
-{%include 'Order/order_list.html'%}
-
+<div id='cards_list'>
+    {%include 'Order/order_list.html'%}
+</div>
       <!-- <div class="exchange-cards__pagination pagination">
         <div class="pagination__img">
           <svg class="pagination__img">

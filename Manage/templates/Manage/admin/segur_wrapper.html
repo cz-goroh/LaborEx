@@ -435,19 +435,43 @@
 </div>
 
 
-
-<script src="{% static  'Manage/admin/segur/js/script.js' %}"></script>
+{%csrf_token%}
 <script>
     $(document).ready(function(){
         $('.checkbox_label').click(function(){
             checkb = $(this).prev();
-            console.log(checkb);
+            // console.log(checkb);
             if (checkb.is(':checked')){
                 checkb.prop('checked', false);
             } else {
                 checkb.prop('checked', true);
             }
             // $(this).is(':checked');
+        });
+        $.ajaxSetup({
+              headers: {
+                  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
+              }
+        });
+        $('.filter_params').on('change', function(){
+            params = {}
+            $('.checkbox_filter').each(function(){
+                params[this.id] = $(this).is(':checked');
+            });
+            $('.number_filter').each(function(){
+                params[this.id] = $(this).val();
+            });
+        // console.log(params);
+        // $('#cards_list').html(params);
+            $.ajax({
+              url: "{% url 'Order:ajax_filter_exchange'%}",
+              method: 'POST',
+              data: params,
+              // dataType: 'json',
+              success: function (data) {
+                  $('#cards_list').html(data);
+              }
+            });
         });
         try{
             var sock = new WebSocket('ws://185.144.29.182:8080/ws/chat/');
@@ -481,20 +505,11 @@
           sock.onerror = function (error) {
               console.log(error);
           };
-        $('.filter_params').on('change', function(){
-            params = {}
-            $('.checkbox_filter').each(function(){
-                params[this.id] = $(this).is(':checked');
-            });
-            $('.number_filter').each(function(){
-                params[this.id] = $(this).val();
-            });
 
-            console.log(params);
-
-        });
     });
 </script>
+<script src="{% static  'Manage/admin/segur/js/script.js' %}"></script>
+
 </body>
 
 </html>

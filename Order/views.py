@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, FormView, ListView
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.core.cache import cache
 from django.template.loader import render_to_string
+from django.db.models import Q
 from .models import *
 from .forms import *
 
@@ -64,8 +65,27 @@ class NewOrderFormView(FormView):
 
 
 def ajax_filter_exchange(request):
-    q = {}
+    # print(request.POST)
+    orders = Order.objects.filter(status='new')
+    price_from = (request.POST['price_from'] or request.POST['price_from-m'])
+    if price_from:
+        orders = orders.filter(price__gte=price_from)
+    price_to = (request.POST['price_to'] or request.POST['price_to-m'])
+    if price_to:
+        orders = orders.filter(price__lte=price_to)
+    if (request.POST['online'] or request.POST['online-m']):
+        orders = orders.filter(rubric__type='online')
+    if (request.POST['offline'] or request.POST['offline-m']):
+        orders = orders.filter(rubric__type='ofline')
+    qs_budg_excl = []
 
+    for key, val in request.POST.items():
+        if len(key.split('_')) >= 2 and key.split('_')[0] == 'budget' and not val:
+            qs_budg_excl.append(orders.filter(Q(price__gte=key.split('_')[1]) &
+                              Q(price__lte=key.split('_')[2])))
+    orders = orders.difference(*qs_budg_excl)
+    # print(orders)
+    q = {'object_list': orders}
     return render(request, 'Order/order_list.html', q)
 
 
