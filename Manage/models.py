@@ -16,7 +16,7 @@ class Rubric(models.Model):
         'Онлайн/офлайн',
         max_length=20,
         choices=RUBRIC_TYPES,
-        default='ofline'
+        default='online'
         )
 
     def __str__(self):

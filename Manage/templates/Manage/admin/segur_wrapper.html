@@ -461,14 +461,15 @@
             $('.number_filter').each(function(){
                 params[this.id] = $(this).val();
             });
-        // console.log(params);
+        console.log(params);
         // $('#cards_list').html(params);
             $.ajax({
               url: "{% url 'Order:ajax_filter_exchange'%}",
               method: 'POST',
-              data: params,
+              data:{'data': JSON.stringify(params)},
               // dataType: 'json',
               success: function (data) {
+                  console.log(params)
                   $('#cards_list').html(data);
               }
             });

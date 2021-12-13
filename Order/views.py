@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, FormView, ListView
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.core.cache import cache
 from django.template.loader import render_to_string
-from django.db.models import Q
+from django.db.models import Q, Count, Subquery, F, OuterRef
 from .models import *
 from .forms import *
 
@@ -66,27 +66,83 @@ class NewOrderFormView(FormView):
 
 def ajax_filter_exchange(request):
     # print(request.POST)
+    params = json.loads(request.POST['data'])
+    offers = Offer.objects.all()
     orders = Order.objects.filter(status='new')
-    price_from = (request.POST['price_from'] or request.POST['price_from-m'])
+    price_from = (params['price_from'] or params['price_from-m'])
     if price_from:
         orders = orders.filter(price__gte=price_from)
-    price_to = (request.POST['price_to'] or request.POST['price_to-m'])
+    price_to = (params['price_to'] or params['price_to-m'])
     if price_to:
         orders = orders.filter(price__lte=price_to)
-    if (request.POST['online'] or request.POST['online-m']):
-        orders = orders.filter(rubric__type='online')
-    if (request.POST['offline'] or request.POST['offline-m']):
-        orders = orders.filter(rubric__type='ofline')
-    qs_budg_excl = []
-
-    for key, val in request.POST.items():
-        if len(key.split('_')) >= 2 and key.split('_')[0] == 'budget' and not val:
-            qs_budg_excl.append(orders.filter(Q(price__gte=key.split('_')[1]) &
-                              Q(price__lte=key.split('_')[2])))
-    orders = orders.difference(*qs_budg_excl)
+    union_qs = []
+    qs_excl = []
+    if params['online'] or params['online-m'] or params['offline'] or params['offline-m']:
+        if (params['online'] or params['online-m']):
+            # print('online')
+            union_qs.append(orders.filter(rubric__type='online'))
+        else:
+            qs_excl.append(orders.filter(rubric__type='online'))
+        if params['offline'] or params['offline-m']:
+            # print('ofline')
+            union_qs.append(orders.filter(rubric__type='ofline'))
+        else:
+            qs_excl.append(orders.filter(rubric__type='ofline'))
+    is_budget = []
+    budget_dict = {}
+    is_offers = []
+    offers_dict = {}
+    for k, v in params.items():
+        if len(k.split('_')) >= 2 and k.split('_')[0] == 'budget':
+            is_v = (
+                params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_"] or params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_-m"]
+            )
+            budget_dict[f"{k.split('_')[1]}_{k.split('_')[2]}"] = is_v
+            if v:
+                is_budget.append(v)
+        elif len(k.split('_')) >= 2 and k.split('_')[0] == 'offers':
+            is_o = (
+                params[f"offers_{k.split('_')[1]}_{k.split('_')[2]}_"] or
+                params[f"offers_{k.split('_')[1]}_{k.split('_')[2]}_-m"]
+            )
+            offers_dict[f"{k.split('_')[1]}_{k.split('_')[2]}"] = is_o
+            if v:
+                is_offers.append(v)
+    if is_offers:
+        orders.annotate(
+            orders_count=Count(Subquery(offers.filter(order=OuterRef('pk')).only('pk'))),
+            # output_field=models.IntegerField()
+        )
+        for off_k, iso in offers_dict.items():
+            if iso:
+                union_qs.append(orders.filter(
+                    Q(orders_count__gte=off_k.split('_')[0]) &
+                    Q(orders_count__lte=off_k.split('_')[1]))
+                )
+            else:
+                # qs_excl
+                pass
+    # print(budget_dict)
+    if is_budget:
+        for bud_k, isv in budget_dict.items():
+            if isv:
+                union_qs.append(orders.filter(Q(price__gte=bud_k.split('_')[0]) &
+                                              Q(price__lte=bud_k.split('_')[1])))
+            else:
+                qs_excl.append(orders.filter(Q(price__gte=bud_k.split('_')[0]) &
+                                             Q(price__lte=bud_k.split('_')[1])))
+    # for ok, ov in p
+    orders = orders.difference(*qs_excl)
+    orders = orders.union(*union_qs)
+    # print('result_orders')
     # print(orders)
     q = {'object_list': orders}
-    return render(request, 'Order/order_list.html', q)
+    rend = render_to_string(
+        'Order/order_list.html',
+        {'object_list': orders}
+        )
+    return HttpResponse(rend)
+    # return render(request, 'Order/order_list.html', q)
 
 
 class OrderList(ListView):

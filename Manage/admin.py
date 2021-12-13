@@ -12,8 +12,12 @@ class MessageAdmin(admin.ModelAdmin):
     list_display = ['user_from', 'user_to', 'sent_time']
 
 
+class RubricAdmin(admin.ModelAdmin):
+    list_display = ['name', 'type']
+
+
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Message, MessageAdmin)
-admin.site.register(Rubric)
+admin.site.register(Rubric, RubricAdmin)
 admin.site.register(ReferalLink)
 # admin.site.register()
