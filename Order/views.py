@@ -114,14 +114,13 @@ def ajax_filter_exchange(request):
             # output_field=models.IntegerField()
         )
         for off_k, iso in offers_dict.items():
+            count_query = orders.filter(
+                Q(orders_count=off_k.split('_')[0]) &
+                Q(orders_count=off_k.split('_')[1]))
             if iso:
-                union_qs.append(orders.filter(
-                    Q(orders_count__gte=off_k.split('_')[0]) &
-                    Q(orders_count__lte=off_k.split('_')[1]))
-                )
+                union_qs.append(count_query)
             else:
-                # qs_excl
-                pass
+                qs_excl.append(count_query)
     # print(budget_dict)
     if is_budget:
         for bud_k, isv in budget_dict.items():
