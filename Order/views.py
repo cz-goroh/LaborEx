@@ -109,14 +109,14 @@ def ajax_filter_exchange(request):
             if v:
                 is_offers.append(v)
     if is_offers:
-        orders.annotate(
+        orders = orders.annotate(
             orders_count=Count(Subquery(offers.filter(order=OuterRef('pk')).only('pk'))),
             # output_field=models.IntegerField()
         )
         for off_k, iso in offers_dict.items():
             count_query = orders.filter(
-                Q(orders_count=off_k.split('_')[0]) &
-                Q(orders_count=off_k.split('_')[1]))
+                Q(orders_count__gte=off_k.split('_')[0]) &
+                Q(orders_count__lte=off_k.split('_')[1]))
             if iso:
                 union_qs.append(count_query)
             else:

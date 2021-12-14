@@ -7,13 +7,16 @@
 <!-- /.filters__title -->
 </div>
 <!-- /.filters__head -->
-
-<div class="filters__category">
-<p>Все рубрики</p>
-<img src="{% static  'Manage/admin/segur/img/shevron.svg' %}" alt="shevron" class="filters__category-img">
+<div class="filters__select">
+    <div class="filters__category open-popup" data-popup="popup4">  
+        <p>Все рубрики</p>
+        <img src="{% static  'Manage/admin/segur/img/shevron.svg' %}" alt="shevron" class="filters__category-img">
+    </div>
+    <!-- /.filters__category -->
+    {% include 'Order/filters_category.html'%}
 </div>
-<!-- /.filters__category -->
-{% include 'Order/filters_category.html'%}
+  <!-- /.filters__select -->
+
 <h3 class="filters__title budget">Бюджет</h3>
 <!-- /.filters__title -->
 <div class="budget__inputs">
