@@ -26,11 +26,88 @@
         <div class="exchange-filters-modal__inner">
           <div class="exchange-filters-modal__items">
             <div class="exchange-filters-modal__item">
-              <div class="filters__category">
+
+            <div class="filters__select">
+              <div class="filters__category open-popup" data-popup="popup4-m">
                 <p>Все рубрики</p>
                 <img src="{% static  'Manage/admin/segur/img/shevron.svg' %}" alt="shevron" class="filters__category-img">
               </div>
               <!-- /.filters__category -->
+
+              <div class="filters__category-modal filters__category-modal-m modal-open" id="popup4-m">
+                  <div class="filters__category-content filters__category-content-m">
+                    <ul class="filters__category-list">
+
+                    {%for rubric in rubrics%}
+                      <li class="filters__category-item">
+                        <div class="filters__category-check">
+                          <input class="filter_params rubric_filter" type="checkbox" name="" id="rubric_{{rubric.id}}_-m">
+                          <label class="checkbox_label" for="rubric_{{rubric.id}}_-m"></label>
+                        </div>
+                        <!-- /.filters__category-check -->
+                        <div class="filters__dropdown dropdown">
+                          <div class="filters__category-name filters__category-name-m">
+                            <p>{{rubric}}</p>
+                            <!-- <img src="{% static  'Manage/admin/segur/img/shevron.svg' %}" alt="shevron" class="filters__category-img"> -->
+                          </div>
+                          <!-- /.filters__category-name -->
+                          <!-- <div class="filters__category-links filters__category-links-m">
+                            <ul>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Логотип и брендинг
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Презентации и инфографика
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Арт и иллюстрации
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Веб и мобильный дизайн
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Обработка и редактирование
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Интерьер и экстерьер
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Промышленный дизайн
+                                </a>
+                              </li>
+                              <li class="filters__category-name-link">
+                                <a href="" class="filters__category-link">
+                                  Наружная реклама
+                                </a>
+                              </li>
+                            </ul>
+                          </div> -->
+                          <!-- /.filters__category-links -->
+                        </div>
+                        <!-- /.filters__dropdown dropdown -->
+                      </li>
+                      <!-- /.filters__category-item -->
+                      {%endfor%}
+                  </ul>
+                <!-- /.filters__category-list -->
+              </div>
+              <!-- /.filters__category-content -->
+            </div>
+            <!-- /.filters__category-modal modal-open -->
+            </div>
 
               <h3 class="filters__title budget">Бюджет</h3>
               <!-- /.filters__title -->

@@ -461,6 +461,10 @@
             $('.number_filter').each(function(){
                 params[this.id] = $(this).val();
             });
+            $('.rubric_filter').each(function(){
+                params[this.id] = $(this).is(':checked');
+            });
+
         console.log(params);
         // $('#cards_list').html(params);
             $.ajax({

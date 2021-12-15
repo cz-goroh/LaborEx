@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 from django.db.models import Q, Count, Subquery, F, OuterRef
 from .models import *
 from .forms import *
+from Manage.models import *
 
 
 async def send_to_exchange_list(order):
@@ -65,7 +66,6 @@ class NewOrderFormView(FormView):
 
 
 def ajax_filter_exchange(request):
-    # print(request.POST)
     params = json.loads(request.POST['data'])
     offers = Offer.objects.all()
     orders = Order.objects.filter(status='new')
@@ -79,12 +79,10 @@ def ajax_filter_exchange(request):
     qs_excl = []
     if params['online'] or params['online-m'] or params['offline'] or params['offline-m']:
         if (params['online'] or params['online-m']):
-            # print('online')
             union_qs.append(orders.filter(rubric__type='online'))
         else:
             qs_excl.append(orders.filter(rubric__type='online'))
         if params['offline'] or params['offline-m']:
-            # print('ofline')
             union_qs.append(orders.filter(rubric__type='ofline'))
         else:
             qs_excl.append(orders.filter(rubric__type='ofline'))
@@ -92,10 +90,21 @@ def ajax_filter_exchange(request):
     budget_dict = {}
     is_offers = []
     offers_dict = {}
+    is_rubric = []
+    rubric_dict = {}
     for k, v in params.items():
-        if len(k.split('_')) >= 2 and k.split('_')[0] == 'budget':
+        if len(k.split('_')) >= 2 and k.split('_')[0] == 'rubric':
+            is_r = (
+                params[f"rubric_{k.split('_')[1]}_"] or
+                params[f"rubric_{k.split('_')[1]}_-m"]
+            )
+            rubric_dict[f"{k.split('_')[1]}"] = is_r
+            if v:
+                is_rubric.append(v)
+        elif len(k.split('_')) >= 2 and k.split('_')[0] == 'budget':
             is_v = (
-                params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_"] or params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_-m"]
+                params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_"] or
+                 params[f"budget_{k.split('_')[1]}_{k.split('_')[2]}_-m"]
             )
             budget_dict[f"{k.split('_')[1]}_{k.split('_')[2]}"] = is_v
             if v:
@@ -108,6 +117,12 @@ def ajax_filter_exchange(request):
             offers_dict[f"{k.split('_')[1]}_{k.split('_')[2]}"] = is_o
             if v:
                 is_offers.append(v)
+    if is_rubric:
+        for rub_k, isr in rubric_dict.items():
+            if isr:
+                union_qs.append(orders.filter(rubric__id=rub_k))
+            else:
+                qs_excl.append(orders.filter(rubric__id=rub_k))
     if is_offers:
         orders = orders.annotate(
             orders_count=Count(Subquery(offers.filter(order=OuterRef('pk')).only('pk'))),
@@ -149,6 +164,11 @@ class OrderList(ListView):
     template_name = 'Order/exchange.html'
     model = Order
     queryset = Order.objects.filter(status='new').order_by('-id')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['rubrics'] = Rubric.objects.all()
+        return context
 
 
 class NewOrderSuccesView(TemplateView):
