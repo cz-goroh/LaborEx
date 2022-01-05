@@ -203,34 +203,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // * Accordions =======================================================
   // * =================================================================
 
-  const accordions = document.querySelectorAll('.accordion__item-title');
-  const contents = document.querySelectorAll('.accordion__item-content');
+  function accordions() {
+    const accordions = document.querySelectorAll('.accordion__item-title');
+    const contents = document.querySelectorAll('.accordion__item-content');
 
-  accordions.forEach((itemAcc) => {
-    itemAcc.addEventListener('click', (event) => {
-      event.preventDefault();
+    accordions.forEach((itemAcc) => {
+      itemAcc.addEventListener('click', (event) => {
+        event.preventDefault();
 
-      const context = itemAcc.nextElementSibling;
+        const context = itemAcc.nextElementSibling;
 
-      if (context.style.maxHeight) {
-        context.style.maxHeight = null;
-        itemAcc.classList.remove('open');
-      } else {
-        context.style.maxHeight = context.scrollHeight + 'px';
-        itemAcc.classList.add('open');
-      }
-
-      contents.forEach((itemCon) => {
-        if (itemCon !== context) {
-          itemCon.style.maxHeight = null;
+        if (context.style.maxHeight) {
+          context.style.maxHeight = null;
+          itemAcc.classList.remove('open');
+        } else {
+          context.style.maxHeight = context.scrollHeight + 'px';
+          itemAcc.classList.add('open');
         }
-      });
 
-      accordions.forEach((item) => {
-        if (item !== itemAcc) {
-          item.classList.remove('open');
-        }
+        contents.forEach((itemCon) => {
+          if (itemCon !== context) {
+            itemCon.style.maxHeight = null;
+          }
+        });
+
+        accordions.forEach((item) => {
+          if (item !== itemAcc) {
+            item.classList.remove('open');
+          }
+        });
       });
     });
-  });
+  }
+  accordions();
 });
