@@ -1,0 +1,183 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+<!-- Useful meta tags -->
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<meta name="google" content="notranslate">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="">
+<link rel="icon" href="{% static 'Blog/img/favicon.ico' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static 'Blog/img/favicon.ico' %}" type="image/x-icon">
+<!-- <title></title> -->
+<link rel="stylesheet" href="{% static 'Blog/css/vendor/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'Blog/css/vendor/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'Blog/css/style.min.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js"></script>
+	<title>Proofex - Заказчик</title>
+</head>
+
+
+<!-- BASE CONTENT -->
+
+<body>
+
+	<div class="body-wrapper">
+
+		<!--	HEADER -->
+		<div class="container">
+  <header class="header">
+    <div class="header__up">
+      <a href="index.html" class="logo__link">
+        <div class="logo">logo</div>
+      </a>
+      <div class="registration">
+        <div class="registration__links">
+          <button class="registration__link" data-modal="input-modal">Войти</button>
+          <span>или</span>
+          <button class=" registration__link" data-modal="registr-modal">Зарегистрироваться</button>
+        </div>
+        <button class="task" data-modal="task-modal">Дать задание</button>
+      </div>
+      <!-- /.registration -->
+      <div class="burger">
+        <div class="burger__icon">
+          <svg class="burger__svg">
+            <use xlink:href="{% static 'Blog/img/icons/sprite.svg' %}#burger"></use>
+          </svg>
+        </div>
+        <!-- /.burger__icon -->
+        <div class="burger__menu">
+          <div class="burger__menu-header">
+            <div class="burger__menu-close">
+              <img src="{% static 'Blog/img/cross.svg' %}" alt="cross">
+            </div>
+            <!-- /.burger__menu-close -->
+          </div>
+          <!-- /.burger__menu-header -->
+          <ul class="burger__list">
+			{%for rubric in parent_rubrics%}
+	            <li class="menu__item">
+	              <a href="{% url 'rubric' rubric.slug %}" class="menu__item-link">{{rubric}}</a>
+	            </li>
+			{%endfor%}
+          </ul>
+          <!-- /.burger__list -->
+        </div>
+        <!-- /.burger__menu -->
+      </div>
+      <!-- /.burger -->
+    </div>
+    <!-- /.header__up -->
+    <div class="header__down">
+      <ul class="menu">
+		{%for rubric in parent_rubrics%}
+	        <li class="menu__item">
+	          <a href="{% url 'rubric' rubric.slug %}" class="menu__item-link">{{rubric}}</a>
+	        </li>
+        {%endfor%}
+      </ul>
+    </div>
+    <!-- /.header__down -->
+  </header>
+  <!-- /.header -->
+</div>
+<!-- /.container -->
+{%include 'Blog/modals.html'%}
+{%block content%}{%endblock%}
+
+<!-- FOOTER -->
+
+</div>
+
+
+<script src="{% static 'Blog/js/libs/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'Blog/js/script.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+		$.ajaxSetup({
+		  headers: {
+			  "X-CSRFToken": document.querySelector('[name=csrfmiddlewaretoken]').value,
+			  }
+		  });
+		window.fbAsyncInit = function() {
+		   FB.init({
+			 appId      : 1113269256078528,
+			 cookie     : true,                     // Enable cookies to allow the server to access the session.
+			 xfbml      : true,                     // Parse social plugins on this webpage.
+			 version    : 'v12.0',       // Use this Graph API version for this call.
+		   });}
+
+	  	$('#facebook_reg ').click(
+			function(){
+				FB.login(function(response) {
+				  // handle the response
+				  console.log(response);
+				  if (response.status === 'connected') {
+				    // Logged into your webpage and Facebook.
+					FB.api('/me', {fields: 'name, email'}, function(response_me) {
+				      console.log( response_me);
+					  $.ajax({
+			          url: "{% url 'Manage:fb_registration'%}",
+			          method: 'POST',
+			          data: response_me,
+			          dataType: 'json',
+			          success: function (data) {
+			              if (data.auth) {
+							  location = '/manage/user_cab/';
+						  } else {
+							  // $('#wrong_pass_mess').show();
+							  }
+				          }
+				        });
+				    });
+				  } else {
+				    // The person is not logged into your webpage or we are unable to tell.
+				  }
+
+				}, {scope: 'public_profile,email'});
+			}
+		);
+		$('#send_order_landos').click(function(){
+			console.log('snd_landos');
+			$.ajax({
+			url: "{% url 'Order:save_order_desc'%}",
+			method: 'POST',
+			data: { 'order_desc': $('#order_desc').val(), },
+			dataType: 'json',
+			success: function (data) {
+				console.log(data);
+			}
+		  });
+
+		});
+
+        $('#login_button').click(function(){
+          $.ajax({
+          url: "{% url 'Blog:ajax_auth'%}",
+          method: 'POST',
+          data: {
+            'email': $('#login_email').val(),
+			'password': $('#login_pass').val(),
+          },
+          dataType: 'json',
+          success: function (data) {
+              if (data.auth) { location = '/manage/user_cab/'; } else {
+				  $('#wrong_pass_mess').show();
+			  }
+          }
+        });
+        });
+	$('#wrong_pass_mess').hide();
+    });
+</script>
+</body>
+
+</html>

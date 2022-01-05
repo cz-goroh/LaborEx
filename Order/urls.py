@@ -12,5 +12,8 @@ urlpatterns = [
     path('order_list/', OrderList.as_view(), name='order_list'),
     path('new_offer_form/<int:order_id>/', NewOfferFormView.as_view(), name='new_offer_form'),
 
+    path('save_order_desc/', save_order_desc, name='save_order_desc'),
+    path('ajax_filter_exchange/', ajax_filter_exchange, name='ajax_filter_exchange'),
+
     path('', OrderList.as_view())
 ]

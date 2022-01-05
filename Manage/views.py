@@ -1,6 +1,7 @@
 import logging, requests, jwt, base64, json
 from string import ascii_letters
 from random import choice
+from google.auth import jwt as google_jwt
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.generic.base import TemplateView
@@ -47,6 +48,14 @@ class ChatView(CabinetTemplateView):
 
 class UserCabPage(CabinetTemplateView):
     template_name = 'Manage/admin/user_cab.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ref_links'] = ReferalLink.objects.filter(parent=self.request.user)
+        return context
+
+
+class LaborCabPage(CabinetTemplateView):
+    template_name = 'Manage/admin/labour_cab.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['ref_links'] = ReferalLink.objects.filter(parent=self.request.user)
@@ -101,6 +110,25 @@ def generate_ref_link(request):
     return JsonResponse({'link': link, 'code': new_code})
 
 
+def fb_registration(request):
+    post = request.POST
+    is_person = Person.objects.filter(
+        Q(username=post['id']) |
+        Q(username=post['email']) |
+        Q(email=post['email'])
+    ).first()
+    if is_person:
+        login(request, is_person)
+        return JsonResponse({'user': is_person.id})
+    else:
+        new_pass = ''.join(choice(ascii_letters) for i in range(12))
+        new_user = Person.objects.create_user(post['id'], post['email'],
+                                   new_pass)
+        new_user.save()
+        login(request, new_user)
+        return JsonResponse({'user': new_user.id})
+
+
 def google_get_key(request):
     if 'code' in request.GET:
         # print(request.GET['code'])
@@ -115,12 +143,7 @@ def google_get_key(request):
         r = requests.post(url, data=params)
         # print(r.json())
         rjs = r.json()
-        parts = rjs['id_token'].split(".")
-        # print(len(parts))
-        payload = parts[1]
-        padded = payload + "=" * (4 - len(payload) % 4)
-        decoded = base64.b64decode(padded)
-        user_info = json.loads(decoded)
+        user_info = google_jwt.decode(rjs['id_token'], verify=False)
         # {'iss': 'https://accounts.google.com', 'azp': '451474316104-omk0c1kq1fefm6faprl9116h655dt4jr.apps.googleusercontent.com', 'aud': '451474316104-omk0c1kq1fefm6faprl9116h655dt4jr.apps.googleusercontent.com', 'sub': '102754829692333344119', 'email': 'cz.goroh@gmail.com', 'email_verified': True, 'at_hash': 'Vg3Tq7dWGdwaDXXJ_yApQw', 'name': 'андрей лобков', 'picture': 'https://lh3.googleusercontent.com/a-/AOh14GjSrH96wel7McV-ZNybJ6bSem0XQ6ADL93BVF3s=s96-c', 'given_name': 'андрей', 'family_name': 'лобков', 'locale': 'ru', 'iat': 1634129279, 'exp': 1634132879}
         is_person = Person.objects.filter(
             Q(username=user_info['sub']) |
@@ -135,6 +158,12 @@ def google_get_key(request):
                                        new_pass)
             new_user.save()
             login(request, new_user)
+            if 'given_name' in user_info:
+                new_user.first_name = user_info['given_name']
+                new_user.save()
+            if 'family_name' in user_info:
+                new_user.last_name = user_info['family_name']
+                new_user.save()
         return HttpResponseRedirect('/manage/user_cab/')
 
 
